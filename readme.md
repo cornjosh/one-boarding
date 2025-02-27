@@ -1,9 +1,9 @@
 # 电子登机牌
 
-![主界面](readme/main.png){: style="display: block; margin: 0 auto;"}
+<img src="readme/main.png" width = "300" alt="主界面" align=center />
 
 ## 项目概述
-生成一个美观、可自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
+`one-boarding` 可用于生成一个美观、自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
 
 ## 项目结构
 项目主要包含单一 `html` 文件，方便部署
