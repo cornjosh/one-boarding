@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登机牌</title>
+  <!-- 内嵌CSS样式 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      font-size: 62.5%;
+    }
+
+    body {
+      font-size: 1.6rem;
+      font-family: "Rubik", sans-serif;
+      letter-spacing: -0.02em;
+      background: linear-gradient(167.96deg, #115bb6 0%, #271a45 100%) no-repeat fixed;
+
+      height: 100vh;
+      display: grid;
+      place-content: center;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .column {
+      grid-auto-flow: column;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    h1,
+    strong {
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.4rem;
+      color: white;
+      text-align: center;
+    }
+
+    p {
+      color: rgba(0, 0, 0, 0.64);
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    strong {
+      color: rgba(0, 0, 0, 0.88);
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    section {
+      padding: 2.4rem 3.2rem;
+      background-color: white;
+      border-radius: 2.4rem;
+
+      box-shadow: 0 4rem 2.4rem rgba(0, 0, 0, 0.25);
+
+      -webkit-mask: var(--mask);
+      mask: var(--mask);
+    }
+
+    #bording-pass {
+      /* max-width: 34.7rem; */
+      margin-top: 4rem;
+    }
+
+    #ticket {
+      margin-top: 2rem;
+    }
+
+    .top {
+      gap: 2.4rem;
+    }
+
+    .departure,
+    .arrival {
+      width: 12.5rem;
+    }
+
+    .departure strong,
+    .arrival strong {
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    .airplane {
+      align-self: center;
+    }
+
+    .airplane img {
+      object-fit: contain;
+      /* 确保图片内容完整显示 */
+    }
+
+    .airplane .square {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+
+    .airplane .rectangle {
+      width: 6rem;
+      height: 3.2rem;
+    }
+
+    .top time {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .middle {
+      border: 1px dashed rgba(0, 0, 0, 0.32);
+      border-left: 0;
+      border-right: 0;
+
+      --mask: radial-gradient(1.2rem at 1.2rem 1.2rem, #0000 93%, black) -1.2rem -1.2rem;
+    }
+
+    .top time sup {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .bottom {
+      --mask: radial-gradient(1.2rem at 1.2rem 1.2rem, #0000 93%, black) -1.2rem -1.2rem;
+
+      -webkit-mask-repeat: repeat-x;
+      mask-repeat: repeat-x;
+    }
+
+    .bottom .container {
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    dl .grid {
+      gap: 1.6rem;
+      min-width: 9.5rem;
+    }
+
+    dt time {
+      color: white;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      background: #115bb6;
+      border-radius: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      display: inline-block;
+      margin-top: 0.2rem;
+    }
+
+    .bottom>p {
+      text-align: center;
+      margin-top: 2.4rem;
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    .qrcode.grid {
+      justify-items: center;
+    }
+
+    #qrcode {
+      padding-bottom: 10px;
+      justify-items: center;
+    }
+
+    footer {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      color: #ffff;
+      opacity: 0.64;
+      width: 27rem;
+      text-align: center;
+      margin: 1rem auto;
+    }
+
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bording-pass">
+    <h1>电子登机牌</h1>
+    <main id="ticket">
+      <section class="top grid">
+        <div class="flight grid column">
+          <div class="number">
+            <p>航班号 FLIGHT NO.</p>
+            <strong id="flightNumber"></strong>
+          </div>
+          <div class="date text-right">
+            <p>航班日期 FLIGHT DATE</p>
+            <strong id="flightDate"></strong>
+          </div>
+        </div>
+        <div class="grid column">
+          <div class="departure grid">
+            <p id="departureAirportName"></p>
+            <strong id="departureAirport"></strong>
+            <time id="departureTime"></time>
+          </div>
+          <div class="airplane grid">
+            <img class="rectangle" id="airlineLogo" src="img/cz.svg" />
+          </div>
+          <div class="arrival text-right grid">
+            <p id="arrivalAirportName"></p>
+            <strong id="arrivalAirport"></strong>
+            <time id="arrivalTime"><sup></sup></time>
+          </div>
+        </div>
+      </section>
+      <section class="middle grid column">
+        <div class="name">
+          <p id="passengerMemberID"></p>
+          <strong id="passengerName"></strong>
+        </div>
+        <div class="seat text-right">
+          <p id="ticketNumber"></p>
+          <strong id="passengerMember"></strong>
+        </div>
+      </section>
+      <section class="bottom">
+        <div class="container grid column">
+          <dl class="grid">
+            <dt>
+              <p>登机时间 BOD.TIME</p>
+              <time id="boardingTime"></time>
+            </dt>
+            <dt>
+              <p>舱位 CLASS</p>
+              <strong id="compartmentCode"></strong>
+            </dt>
+            <dt>
+              <p>座位号 SEAT</p>
+              <strong id="seatNumber"></strong>
+            </dt>
+            <dt>
+              <p>登机口 GATE</p>
+              <strong id="gate"></strong>
+            </dt>
+          </dl>
+
+          <div class="qrcode grid">
+            <div id="qrcode" alt="二维码图片"></div>
+            <p>乘机二维码</p>
+          </div>
+        </div>
+        <p>登机序号 BOD.NO. <strong id="checkInSequenceNumber"></strong></p>
+      </section>
+    </main>
+    <footer>
+      请注意登机口临时变更信息，登机闸口于起飞前20分钟关闭。<br />Please note that the boarding gate may change. The boarding gate closes 20
+      minutes before departure.
+    </footer>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button onclick="hideModal()">使用演示信息</button>
+      <form>
+        <div>
+          <label for="inputPassengerName">乘客姓名(*)</label>
+          <input type="text" id="inputPassengerName" name="inputPassengerName" />
+        </div>
+        <div>
+          <label for="inputTicketNumber">票号</label>
+          <input type="text" id="inputTicketNumber" name="inputTicketNumber" />
+        </div>
+        <div>
+          <label for="inputOperatingCarrierPNR">PNR(*)</label>
+          <input type="text" id="inputOperatingCarrierPNR" name="inputOperatingCarrierPNR" />
+        </div>
+        <div>
+          <label for="inputPassengerMemberID">会员ID</label>
+          <input type="text" id="inputPassengerMemberID" name="inputPassengerMemberID" />
+        </div>
+        <div>
+          <label for="inputPassengerMember">会员等级</label>
+          <input type="text" id="inputPassengerMember" name="inputPassengerMember" />
+        </div>
+
+        <div>
+          <label for="inputOperatingCarrierDesignator">承运人代码(*)</label>
+          <input type="text" id="inputOperatingCarrierDesignator" name="inputOperatingCarrierDesignator" />
+        </div>
+        <div>
+          <label for="inputFlightNumber">航班号(数字)(*)</label>
+          <input type="text" id="inputFlightNumber" name="inputFlightNumber" />
+        </div>
+        <div>
+          <label for="inputFlightDate">航班日期(*)</label>
+          <input type="date" id="inputFlightDate" name="inputFlightDate" />
+        </div>
+        <div>
+          <label for="inputDepartureAirport">出发机场代码(*)</label>
+          <input type="text" id="inputDepartureAirport" name="inputDepartureAirport" />
+        </div>
+        <div>
+          <label for="inputDepartureAirportName">出发机场名称</label>
+          <input type="text" id="inputDepartureAirportName" name="inputDepartureAirportName" />
+        </div>
+        <div>
+          <label for="inputDepartureTime">出发时间</label>
+          <input type="time" id="inputDepartureTime" name="inputDepartureTime" />
+        </div>
+        <div>
+          <label for="inputArrivalAirport">到达机场代码(*)</label>
+          <input type="text" id="inputArrivalAirport" name="inputArrivalAirport" />
+        </div>
+        <div>
+          <label for="inputArrivalAirportName">到达机场名称</label>
+          <input type="text" id="inputArrivalAirportName" name="inputArrivalAirportName" />
+        </div>
+        <div>
+          <label for="inputArrivalTime">到达时间</label>
+          <input type="time" id="inputArrivalTime" name="inputArrivalTime" />
+        </div>
+        <div>
+          <label for="inputArrivalDayOffset">到达日期偏移(+1)</label>
+          <input type="text" id="inputArrivalDayOffset" name="inputArrivalDayOffset" />
+        </div>
+
+        <div>
+          <label for="inputBoardingTime">登机时间</label>
+          <input type="time" id="inputBoardingTime" name="inputBoardingTime" />
+        </div><div>
+          <label for="inputCompartmentCode">舱位代码(*)</label>
+          <input type="text" id="inputCompartmentCode" name="inputCompartmentCode" />
+        </div><div>
+          <label for="inputSeatNumber">座位号(*)</label>
+          <input type="text" id="inputSeatNumber" name="inputSeatNumber" />
+        </div>
+        <div>
+          <label for="inputGate">登机口</label>
+          <input type="text" id="inputGate" name="inputGate" />
+        </div>
+        <div>
+          <label for="inputCheckInSequenceNumber">值机序号(*)</label>
+          <input type="text" id="inputCheckInSequenceNumber" name="inputCheckInSequenceNumber" />
+        </div>
+      </form>
+      <button onclick="redirectToNewURL();">生成</button>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcbp@6.0.2/dist/index.umd.min.js"></script>
+<script type="text/javascript">
+  // 获取网页参数
+  function getQueryVariable(variable) {
+    // 从当前页面的 URL 中获取查询字符串，并去掉开头的问号
+    var query = window.location.search.substring(1);
+    // 将查询字符串按 & 分割成多个键值对
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+      // 将每个键值对按 = 分割成键和值
+      var pair = vars[i].split("=");
+      if (pair[0] === variable) {
+        // 如果键匹配，对值进行解码并返回
+        return pair.length > 1 ? decodeURIComponent(pair[1]) : null;
+      }
+    }
+    return null;
+  }
+
+  // 获取输入框的值
+  function getInputValues() {
+    const passengerName = document.getElementById('inputPassengerName').value;
+    const passengerMember = document.getElementById('inputPassengerMember').value;
+    const passengerMemberID = document.getElementById('inputPassengerMemberID').value;
+    const ticketNumber = document.getElementById('inputTicketNumber').value;
+    const boardingTime = document.getElementById('inputBoardingTime').value;
+    const gate = document.getElementById('inputGate').value;
+    const operatingCarrierPNR = document.getElementById('inputOperatingCarrierPNR').value;
+    const departureAirport = document.getElementById('inputDepartureAirport').value;
+    const departureTime = document.getElementById('inputDepartureTime').value;
+    const departureAirportName = document.getElementById('inputDepartureAirportName').value;
+    const arrivalAirport = document.getElementById('inputArrivalAirport').value;
+    const arrivalAirportName = document.getElementById('inputArrivalAirportName').value;
+    const arrivalTime = document.getElementById('inputArrivalTime').value;
+    const arrivalDayOffset = document.getElementById('inputArrivalDayOffset').value;
+    const operatingCarrierDesignator = document.getElementById('inputOperatingCarrierDesignator').value;
+    const flightNumber = document.getElementById('inputFlightNumber').value;
+    const flightDate = document.getElementById('inputFlightDate').value;
+    const compartmentCode = document.getElementById('inputCompartmentCode').value;
+    const seatNumber = document.getElementById('inputSeatNumber').value;
+    const checkInSequenceNumber = document.getElementById('inputCheckInSequenceNumber').value;
+
+    return {
+      passengerName,
+      passengerMember,
+      passengerMemberID,
+      ticketNumber,
+      boardingTime,
+      gate,
+      operatingCarrierPNR,
+      departureAirport,
+      departureTime,
+      departureAirportName,
+      arrivalAirport,
+      arrivalAirportName,
+      arrivalTime,
+      arrivalDayOffset,
+      operatingCarrierDesignator,
+      flightNumber,
+      flightDate,
+      compartmentCode,
+      seatNumber,
+      checkInSequenceNumber
+    };
+  }
+
+  // 构建含参数的 URL
+  function buildURL() {
+    let url = window.location.href.split('?')[0]; // 获取当前页面的 URL，并去掉查询字符串
+    inputValues = getInputValues();
+    for (const key in inputValues) {
+      if (inputValues.hasOwnProperty(key)) {
+        const value = inputValues[key];
+        // 检查属性值是否存在
+        if (value !== null && value !== undefined && value !== '') {
+          // 对参数值进行 URI 编码，确保特殊字符能正确处理
+          url = url + (url.includes('?') ? '&' : '?') + key + '=' + encodeURIComponent(value);
+        }
+      }
+    }
+    return url;
+  }
+
+  //跳转到新的 URL
+  function redirectToNewURL() {
+    window.location.href = buildURL();
+  }
+
+
+  // 操作弹窗
+  var modal = document.getElementById("modal");
+  function showModal() {
+    modal.style.display = "block";
+  }
+  function hideModal() {
+    modal.style.display = "none";
+  }
+
+  // 如果没有参数，则使用默认值
+  function convertToUpperCase(value) {
+    if (typeof value === 'string') {
+      return value.toUpperCase();
+    }
+    return value;
+  }
+  var passengerName = getQueryVariable("passengerName") ? convertToUpperCase(getQueryVariable("passengerName")) : (showModal(), "HELLO/WORLD"); // 乘客姓名
+  var passengerMember = convertToUpperCase(getQueryVariable("passengerMember")) || "CZ ELITE PLUS"; // 乘客会员
+  var passengerMemberID = convertToUpperCase(getQueryVariable("passengerMemberID")) || "CZ 0000000000/G"; // 乘客会员ID
+  var ticketNumber = getQueryVariable("ticketNumber") || "7840000000000"; // 机票号
+  var boardingTime = getQueryVariable("boardingTime") || "10:20"; // 登机时间
+  var gate = getQueryVariable("gate") || "A12"; // 登机口
+  var operatingCarrierPNR = convertToUpperCase(getQueryVariable("operatingCarrierPNR")) || "ABCDEF"; // 承运人PNR
+  var departureAirport = convertToUpperCase(getQueryVariable("departureAirport")) || "PKX"; // 出发机场
+  var departureTime = getQueryVariable("departureTime") || "11:00"; // 出发时间
+  var departureAirportName = getQueryVariable("departureAirportName") || "北京大兴国际机场"; // 出发机场名称
+  var arrivalAirport = convertToUpperCase(getQueryVariable("arrivalAirport")) || "CAN"; // 到达机场
+  var arrivalAirportName = getQueryVariable("arrivalAirportName") || "广州白云国际机场"; // 到达机场名称
+  var arrivalTime = getQueryVariable("arrivalTime") || "13:00"; // 到达时间
+  var arrivalDayOffset = getQueryVariable("arrivalDayOffset"); // 到达日期偏移
+  var operatingCarrierDesignator = convertToUpperCase(getQueryVariable("operatingCarrierDesignator")) || "CZ"; // 承运人代码
+  var flightNumber = getQueryVariable("flightNumber") || "1234"; // 航班号
+  var flightDate = getQueryVariable("flightDate") || "2025.1.1"; // 航班日期
+  var compartmentCode = convertToUpperCase(getQueryVariable("compartmentCode")) || "Y"; // 舱位代码
+  var seatNumber = convertToUpperCase(getQueryVariable("seatNumber")) || "1A"; // 座位号
+  var checkInSequenceNumber = getQueryVariable("checkInSequenceNumber") || "025"; // 值机序号
+
+  // 生成网页内容
+  document.getElementById("passengerName").textContent = passengerName;
+  document.getElementById("passengerMember").textContent = passengerMember;
+  document.getElementById("passengerMemberID").textContent = passengerMemberID;
+  document.getElementById("ticketNumber").textContent = ticketNumber;
+  document.getElementById("boardingTime").textContent = boardingTime;
+  document.getElementById("gate").textContent = gate;
+  document.getElementById("departureAirport").textContent = departureAirport;
+  document.getElementById("departureTime").textContent = departureTime;
+  document.getElementById("departureAirportName").textContent = departureAirportName;
+  document.getElementById("arrivalAirport").textContent = arrivalAirport;
+  document.getElementById("arrivalAirportName").textContent = arrivalAirportName;
+  document.getElementById("arrivalTime").innerHTML = arrivalDayOffset ? arrivalTime + "<sup>" + arrivalDayOffset + "</sup>" : arrivalTime;
+  document.getElementById("flightDate").textContent = flightDate;
+  document.getElementById("flightNumber").textContent = operatingCarrierDesignator + flightNumber;
+  document.getElementById("compartmentCode").textContent = compartmentCode;
+  document.getElementById("seatNumber").textContent = seatNumber;
+  document.getElementById("checkInSequenceNumber").textContent = checkInSequenceNumber;
+
+  document.getElementById("airlineLogo").src = "img/" + operatingCarrierDesignator.toLowerCase() + ".svg";
+
+  // 生成BCBP数据
+  var bcbp = bcbp.encode({
+    data: {
+      legs: [
+        {
+          operatingCarrierPNR: operatingCarrierPNR,
+          departureAirport: departureAirport,
+          arrivalAirport: arrivalAirport,
+          operatingCarrierDesignator: operatingCarrierDesignator,
+          flightNumber: flightNumber,
+          flightDate: flightDate,
+          compartmentCode: compartmentCode,
+          seatNumber: seatNumber,
+          checkInSequenceNumber: checkInSequenceNumber,
+          passengerStatus: "1",
+        },
+      ],
+      passengerName: passengerName,
+    },
+  });
+  console.log(bcbp);
+
+  // 生成二维码
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: bcbp,
+    width: 128,
+    height: 128,
+    correctLevel: QRCode.CorrectLevel.L
+  });    
+</script>
+
+</html>
