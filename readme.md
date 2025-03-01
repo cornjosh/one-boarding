@@ -1,4 +1,4 @@
-# 电子登机牌
+# One-boarding
 
 <img src="readme/main.png" width = "300" alt="主界面" align=center />
 
