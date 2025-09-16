@@ -25,6 +25,12 @@
 
 `One-boarding` generates beautiful, customizable boarding pass interfaces with real boarding QR codes generated according to the IATA Bar Coded Boarding Pass format.
 
+## Screenshots ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
+
 ## Features 🎯
 
 ### ✈️ Boarding Pass Information Display
@@ -94,12 +100,6 @@ one-boarding/
 └── readme/           # README related resources
     └── main.png      # Project screenshot
 ```
-
-## Screenshots ✨
-
-<div align="center">
-    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
-</div>
 
 ## Quick Start 🚀
 

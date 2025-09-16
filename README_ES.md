@@ -25,6 +25,12 @@
 
 One-boarding es un generador de tarjetas de embarque de código abierto que crea interfaces hermosas y personalizables de tarjetas de embarque con códigos QR reales que cumplen con los estándares IATA Bar Coded Boarding Pass (BCBP). Ofrece soporte de internacionalización integral para 14 idiomas.
 
+## Screenshots ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
+
 ## Características principales 🎯
 
 ### ✈️ Visualización de información de tarjeta de embarque
@@ -32,12 +38,6 @@ One-boarding es un generador de tarjetas de embarque de código abierto que crea
 - [x] **Información del pasajero**: Nombre del pasajero, número de boleto, ID de miembro, nivel de miembro
 - [x] **Información de embarque**: Hora de embarque, código de clase de cabina, número de asiento, puerta
 - [x] **Código QR**: Códigos QR de embarque reales conformes con los estándares IATA BCBP
-
-## Screenshots ✨
-
-<div align="center">
-    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
-</div>
 
 ## Inicio rápido 🚀
 
