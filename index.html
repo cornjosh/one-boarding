@@ -483,7 +483,7 @@
               </div>
               <div class="swal2-actions">
                 ${options.showCancelButton ? `<button class="swal2-button swal2-cancel" id="swal2-cancel">${options.cancelButtonText || '取消'}</button>` : ''}
-                <button class="swal2-button swal2-confirm" id="swal2-confirm">${options.confirmButtonText || '确定'}</button>
+                ${!options.timer ? `<button class="swal2-button swal2-confirm" id="swal2-confirm">${options.confirmButtonText || '确定'}</button>` : ''}
               </div>
             </div>
           </div>
@@ -531,12 +531,12 @@
           });
         }
 
-        // 点击背景关闭
-        backdrop.addEventListener('click', (e) => {
-          if (e.target === backdrop) {
-            closeModal(false);
-          }
-        });
+        // 注释掉点击背景关闭功能，用户必须通过按钮操作
+        // backdrop.addEventListener('click', (e) => {
+        //   if (e.target === backdrop) {
+        //     closeModal(false);
+        //   }
+        // });
 
         // ESC 键关闭
         const handleEsc = (e) => {
@@ -675,12 +675,14 @@
         const url = buildURLFromValues(inputValues);
         window.location.href = url;
       } else if (result.dismiss === 'cancel') {
-        // 用户点击了使用演示信息按钮
-        Swal.fire({
-          title: '🎉 使用演示信息',
-          text: '已为您加载演示数据！',
-          timer: 1500
-        });
+        // 用户点击了使用演示信息按钮 - 显示成功消息但不重新加载页面
+        setTimeout(() => {
+          Swal.fire({
+            title: '🎉 使用演示信息',
+            text: '已为您加载演示数据！',
+            timer: 1500
+          });
+        }, 350); // 等待前一个模态框完全关闭
       }
     });
   }
@@ -736,7 +738,18 @@
     }
     return value;
   }
-  var passengerName = getQueryVariable("passengerName") ? convertToUpperCase(getQueryVariable("passengerName")) : (showModal(), "HELLO/WORLD"); // 乘客姓名
+  // 标记是否已经显示过模态框
+  var hasShownModal = false;
+  
+  function showModalOnce() {
+    if (!hasShownModal) {
+      hasShownModal = true;
+      showModal();
+    }
+    return "HELLO/WORLD";
+  }
+
+  var passengerName = getQueryVariable("passengerName") ? convertToUpperCase(getQueryVariable("passengerName")) : showModalOnce(); // 乘客姓名
   var passengerMember = convertToUpperCase(getQueryVariable("passengerMember")) || "CZ ELITE PLUS"; // 乘客会员
   var passengerMemberID = convertToUpperCase(getQueryVariable("passengerMemberID")) || "CZ 0000000000/G"; // 乘客会员ID
   var ticketNumber = getQueryVariable("ticketNumber") || "7840000000000"; // 机票号
