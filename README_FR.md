@@ -25,6 +25,12 @@
 
 One-boarding est un générateur de cartes d'embarquement open source qui crée de belles interfaces de cartes d'embarquement personnalisables avec de vrais codes QR conformes aux normes IATA Bar Coded Boarding Pass (BCBP). Il offre un support d'internationalisation complet pour 14 langues.
 
+## Screenshots ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
+
 ## Fonctionnalités principales 🎯
 
 ### ✈️ Affichage des informations de la carte d'embarquement
@@ -32,12 +38,6 @@ One-boarding est un générateur de cartes d'embarquement open source qui crée 
 - [x] **Informations passager**: Nom du passager, numéro de billet, ID membre, niveau de membre
 - [x] **Informations d'embarquement**: Heure d'embarquement, code de classe cabine, numéro de siège, porte
 - [x] **Code QR**: Vrais codes QR d'embarquement conformes aux normes IATA BCBP
-
-## Screenshots ✨
-
-<div align="center">
-    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
-</div>
 
 ## Démarrage rapide 🚀
 

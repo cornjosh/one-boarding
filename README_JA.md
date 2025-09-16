@@ -25,6 +25,12 @@
 
 One-boardingは、実際のIATA Bar Coded Boarding Pass（BCBP）標準に準拠したQRコードを含む、美しくカスタマイズ可能な搭乗券インターフェースを作成するオープンソースの搭乗券ジェネレーターです。14言語の包括的な国際化サポートを提供します。
 
+## プロジェクト截图 ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding インターフェース" height="400px">
+</div>
+
 ## 主な機能 🎯
 
 ### ✈️ 搭乗券情報表示
@@ -51,12 +57,6 @@ One-boardingは、実際のIATA Bar Coded Boarding Pass（BCBP）標準に準拠
 - **tr-TR**: Türkçe (Türkiye) 🇹🇷
 - **pl-PL**: Polski (Polska) 🇵🇱
 - **hu-HU**: Magyar (Magyarország) 🇭🇺
-
-## プロジェクト截图 ✨
-
-<div align="center">
-    <img src="readme/main.png" alt="One-boarding インターフェース" height="400px">
-</div>
 
 ## クイックスタート 🚀
 

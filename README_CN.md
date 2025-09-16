@@ -24,6 +24,12 @@
 ## 项目概述 ✨
 `one-boarding` 可用于生成一个美观、自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
 
+## 项目截图 ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding 界面" height="400px">
+</div>
+
 ## 功能特性 🎯
 
 ### ✈️ 登机牌信息展示
@@ -93,12 +99,6 @@ one-boarding/
 └── readme/           # README 相关资源
     └── main.png      # 项目截图
 ```
-
-## 项目截图 ✨
-
-<div align="center">
-    <img src="readme/main.png" alt="One-boarding 界面" height="400px">
-</div>
 
 ## 快速开始 🚀
 
