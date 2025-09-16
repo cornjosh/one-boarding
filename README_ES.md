@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="readme/main.png" alt="One-boarding" height="200px">
   <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
   <em>Generador hermoso y personalizable de tarjetas de embarque con códigos QR IATA BCBP reales</em>
 </div>
@@ -18,7 +17,7 @@
 
 ---
 
-[简体中文](/README.md) | [English](/README_EN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Русский](/README_RU.md)
+[简体中文](/README_CN.md) | [English](/README.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Русский](/README_RU.md)
 
 ---
 
@@ -33,6 +32,12 @@ One-boarding es un generador de tarjetas de embarque de código abierto que crea
 - [x] **Información del pasajero**: Nombre del pasajero, número de boleto, ID de miembro, nivel de miembro
 - [x] **Información de embarque**: Hora de embarque, código de clase de cabina, número de asiento, puerta
 - [x] **Código QR**: Códigos QR de embarque reales conformes con los estándares IATA BCBP
+
+## Screenshots ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
 
 ## Inicio rápido 🚀
 
@@ -78,6 +83,6 @@ Este proyecto fue inspirado y ayudado por los siguientes proyectos excelentes:
 
 ---
 
-🎫 **One-boarding** ©Josh Zeng. Released under the [PLACEHOLDER_LICENSE] License.
+🎫 **One-boarding** ©Josh Zeng. Released under the MIT License License.
 
 [@Blog](https://linkyou.top/) · [@GitHub](https://github.com/cornjosh) · [Live Demo](https://one-boarding.linkyou.top/)

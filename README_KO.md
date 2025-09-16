@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="readme/main.png" alt="One-boarding" height="200px">
   <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
   <em>실제 IATA BCBP QR 코드가 포함된 아름다운 맞춤형 탑승권 생성기</em>
 </div>
@@ -18,7 +17,7 @@
 
 ---
 
-[简体中文](/README.md) | [English](/README_EN.md) | [日本語](/README_JA.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
+[简体中文](/README_CN.md) | [English](/README.md) | [日本語](/README_JA.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
 
 ---
 
@@ -52,6 +51,12 @@ One-boarding은 실제 IATA Bar Coded Boarding Pass(BCBP) 표준을 준수하는
 - **tr-TR**: Türkçe (Türkiye) 🇹🇷
 - **pl-PL**: Polski (Polska) 🇵🇱
 - **hu-HU**: Magyar (Magyarország) 🇭🇺
+
+## 프로젝트 스크린샷 ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding 인터페이스" height="400px">
+</div>
 
 ## 빠른 시작 🚀
 
@@ -112,6 +117,6 @@ One-boarding 프로젝트에 대한 기여를 환영합니다!
 
 ---
 
-🎫 **One-boarding** ©Josh Zeng. Released under the [PLACEHOLDER_LICENSE] License.
+🎫 **One-boarding** ©Josh Zeng. Released under the MIT License.
 
 [@Blog](https://linkyou.top/) · [@GitHub](https://github.com/cornjosh) · [Live Demo](https://one-boarding.linkyou.top/)

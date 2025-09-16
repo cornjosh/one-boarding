@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="readme/main.png" alt="One-boarding" height="200px">
   <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
   <em>Beautiful customizable boarding pass generator with real IATA BCBP QR codes</em>
 </div>
@@ -12,31 +11,32 @@
 <img src="https://img.shields.io/github/license/cornjosh/one-boarding?style=flat-square" alt="GitHub License"/>
 </p>
 
-<h5 align="center">One-boarding 是一个开源的登机牌生成器，可以创建美观、自定义的登机牌界面，包含真实可用的乘机二维码（基于 IATA Bar Coded Boarding Pass 标准）。支持14种语言的国际化界面。</h5>
+<h5 align="center">One-boarding is an open-source boarding pass generator that creates beautiful, customizable boarding pass interfaces with real IATA Bar Coded Boarding Pass (BCBP) standard QR codes. Features comprehensive internationalization support for 14 languages.</h5>
 
-> 🎯 **快速预览**: [https://one-boarding.linkyou.top/](https://one-boarding.linkyou.top/)
-
----
-
-[English](/README_EN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
+> 🎯 **Live Preview**: [https://one-boarding.linkyou.top/](https://one-boarding.linkyou.top/)
 
 ---
 
-## 项目概述 ✨
-`one-boarding` 可用于生成一个美观、自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
+[简体中文](/README_CN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
 
-## 功能特性 🎯
+---
 
-### ✈️ 登机牌信息展示
-- [x] **航班信息**：显示航班号、航班日期、出发机场和到达机场的信息
-- [x] **乘客信息**：包括乘客姓名、票号、会员ID 和会员等级等信息
-- [x] **登机信息**：显示登机时间、舱位代码、座位号和登机口等信息
-- [x] **二维码**：生成真实可用的乘机二维码（符合 IATA BCBP 标准）
+## Project Overview ✨
 
-### 🌍 国际化支持 (i18n)
-本项目支持 **14 种语言**，可在登机牌页面选择不同的显示语言：
+`One-boarding` generates beautiful, customizable boarding pass interfaces with real boarding QR codes generated according to the IATA Bar Coded Boarding Pass format.
 
-#### 支持的语言
+## Features 🎯
+
+### ✈️ Boarding Pass Information Display
+- [x] **Flight Information**: Flight number, flight date, departure and arrival airports
+- [x] **Passenger Information**: Passenger name, ticket number, member ID, and membership level
+- [x] **Boarding Information**: Boarding time, cabin class code, seat number, and gate
+- [x] **QR Code**: Real boarding QR codes compliant with IATA BCBP standards
+
+### 🌍 Internationalization Support (i18n)
+This project supports **14 languages** with language selection available on the boarding pass page:
+
+#### Supported Languages
 - **zh-Hans**: 简体中文 🇨🇳
 - **zh-Hant**: 繁體中文 🇹🇼 
 - **en-US**: English (United States) 🇺🇸
@@ -52,155 +52,155 @@
 - **pl-PL**: Polski (Polska) 🇵🇱
 - **hu-HU**: Magyar (Magyarország) 🇭🇺
 
-#### 语言切换方式
-1. **自动检测**: 根据浏览器语言自动选择对应语言
-2. **URL参数**: 通过 `?lang=language-code` 指定语言，如 `?lang=en-US`
-3. **页面选择器**: 使用页面右上角的语言选择下拉框
-4. **本地存储**: 选择的语言会保存在浏览器中，下次访问时自动应用
+#### Language Switching Methods
+1. **Auto-detection**: Automatically selects language based on browser settings
+2. **URL Parameter**: Specify language using `?lang=language-code`, e.g., `?lang=en-US`
+3. **Page Selector**: Use the language dropdown in the top-right corner
+4. **Local Storage**: Selected language is saved in browser for future visits
 
-#### 翻译内容
-所有登机牌相关的航空术语都根据各地区的习惯进行了专业翻译，包括：
-- 登机牌标题和字段标签
-- 航空术语（航班号、登机口、座位等）
-- 表单标签和占位符文本
-- 按钮文本和提示信息
+#### Translation Content
+All boarding pass-related aviation terminology is professionally translated according to regional conventions, including:
+- Boarding pass titles and field labels
+- Aviation terminology (flight number, gate, seat, etc.)
+- Form labels and placeholder text
+- Button text and notification messages
 
-### 🏗️ 技术特性
-- [x] **单文件部署**: 主要包含单一 HTML 文件，方便部署
-- [x] **响应式设计**: 适配桌面和移动设备
-- [x] **实时预览**: 即时查看登机牌效果
-- [x] **自定义信息**: 支持自定义所有登机牌字段
-- [x] **航司支持**: 支持多家航空公司logo显示
+### 🏗️ Technical Features
+- [x] **Single-file Deployment**: Main functionality contained in a single HTML file for easy deployment
+- [x] **Responsive Design**: Compatible with desktop and mobile devices
+- [x] **Real-time Preview**: Instant boarding pass preview
+- [x] **Custom Information**: Support for customizing all boarding pass fields
+- [x] **Airline Support**: Support for multiple airline logos
 
-## 项目结构 📁
+## Project Structure 📁
 
-项目采用简洁的单文件架构，方便部署和使用：
+The project uses a minimalist architecture with external JavaScript libraries and JSON translation files for internationalization:
 
 ```
 one-boarding/
-├── index.html          # 主要的 HTML 文件，包含完整的登机牌生成器
+├── index.html          # Main HTML file containing the complete boarding pass generator
 ├── js/
-│   ├── i18n.js        # 国际化功能实现，处理语言加载和文本替换
-│   ├── bcbp.min.js    # IATA BCBP 二维码生成库
-│   └── qrcode.min.js  # QR码生成库
-├── locales/           # 各语言的翻译文件
-│   ├── zh-Hans.json   # 简体中文
-│   ├── en-US.json     # 英语
-│   └── ...            # 其他语言文件
-├── img/               # 航空公司 logo 文件
-│   ├── 3u.png        # 四川航空
-│   ├── ca.png        # 中国国际航空
-│   └── ...           # 其他航司 logo
-└── readme/           # README 相关资源
-    └── main.png      # 项目截图
+│   ├── i18n.js        # Internationalization implementation, handles language loading and text replacement
+│   ├── bcbp.min.js    # IATA BCBP QR code generation library
+│   └── qrcode.min.js  # QR code generation library
+├── locales/           # Translation files for each language
+│   ├── zh-Hans.json   # Simplified Chinese
+│   ├── en-US.json     # English
+│   └── ...            # Other language files
+├── img/               # Airline logo files
+│   ├── 3u.png        # Sichuan Airlines
+│   ├── ca.png        # Air China
+│   └── ...           # Other airline logos
+└── readme/           # README related resources
+    └── main.png      # Project screenshot
 ```
 
-## 快速开始 🚀
+## Screenshots ✨
 
-### 安装部署
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
 
-1. **克隆仓库**:
+## Quick Start 🚀
+
+### Installation & Deployment
+
+1. **Clone Repository**:
    ```bash
    git clone https://github.com/cornjosh/one-boarding.git
    cd one-boarding
    ```
 
-2. **本地运行**:
+2. **Local Development**:
    ```bash
-   # 直接在浏览器中打开 index.html
+   # Open index.html directly in browser
    open index.html
    
-   # 或者使用本地服务器
+   # Or use a local server
    python -m http.server 8000
-   # 访问 http://localhost:8000
+   # Visit http://localhost:8000
    ```
 
-3. **在线体验**:
-   直接访问: [https://one-boarding.linkyou.top/](https://one-boarding.linkyou.top/)
+3. **Online Experience**:
+   Visit directly: [https://one-boarding.linkyou.top/](https://one-boarding.linkyou.top/)
 
-### 使用方法
-1. 打开 `index.html` 文件，即可在浏览器中查看登机牌页面
-2. 点击"使用演示信息"按钮可以弹出模态框
-3. 在模态框中输入相关信息，即可生成包含信息的登机牌
-4. 生成的二维码符合 IATA BCBP 标准，可用于实际登机验证
+### Usage Instructions
+1. Open the `index.html` file to view the boarding pass page in your browser
+2. Click the "Use Demo Information" button to open the modal dialog
+3. Enter relevant information in the modal to generate a boarding pass with your data
+4. Generated QR codes comply with IATA BCBP standards and can be used for actual boarding verification
 
-### 自定义航空公司
-项目支持以下航空公司的 logo 显示：
-- 四川航空 (`3u`)
-- 春秋航空 (`9c`) 
-- 中国国际航空 (`ca`)
-- 中国南方航空 (`cz`)
-- 海南航空 (`hu`)
-- 厦门航空 (`mf`)
-- 中国东方航空 (`mu`)
+### Custom Airlines
+The project supports logos for the following airlines:
+- Sichuan Airlines (`3u`)
+- Spring Airlines (`9c`) 
+- Air China (`ca`)
+- China Southern Airlines (`cz`)
+- Hainan Airlines (`hu`)
+- Xiamen Airlines (`mf`)
+- China Eastern Airlines (`mu`)
 
-可以通过在 `img/` 目录下添加对应的航空公司 logo 文件来支持更多航空公司。
+You can add support for more airlines by adding corresponding airline logo files to the `img/` directory.
 
-## 兼容性 🔧
+## Compatibility 🔧
 
-在现代浏览器（如 Chrome、Firefox、Safari 等）中进行了测试。旧版本的浏览器中可能会出现样式或功能问题。
+Tested on modern browsers (Chrome, Firefox, Safari, etc.). Older browser versions may experience styling or functionality issues.
 
-**系统要求:**
-- 现代浏览器 (Chrome 60+, Firefox 55+, Safari 12+, Edge 79+)
-- JavaScript 支持
-- 互联网连接（加载字体和资源）
+**System Requirements:**
+- Modern browsers (Chrome 60+, Firefox 55+, Safari 12+, Edge 79+)
+- JavaScript support
+- Internet connection (for loading fonts and resources)
 
-## 贡献指南 🤝
+## Contributing 🤝
 
-欢迎为 One-boarding 项目做出贡献！
+Contributions to the One-boarding project are welcome!
 
-### 🐛 问题报告
-- 在 GitHub 上创建 issue 描述问题
-- 包含浏览器版本和操作系统信息
-- 提供复现步骤和错误截图
+### 🐛 Bug Reports
+- Create an issue on GitHub describing the problem
+- Include browser version and operating system information
+- Provide reproduction steps and error screenshots
 
-### 💡 功能建议
-- 提出新功能或改进建议
-- 说明使用场景和预期效果
+### 💡 Feature Suggestions
+- Propose new features or improvements
+- Explain use cases and expected outcomes
 
-### 🌍 翻译贡献
-- 帮助改进现有语言翻译
-- 添加新语言支持
-- 更新文档翻译
+### 🌍 Translation Contributions
+- Help improve existing language translations
+- Add support for new languages
+- Update documentation translations
 
-### 💻 代码贡献
-- Fork 项目仓库
-- 创建功能分支
-- 提交带有清晰描述的 Pull Request
+### 💻 Code Contributions
+- Fork the project repository
+- Create a feature branch
+- Submit a Pull Request with clear descriptions
 
-## 开发计划 📋
+## Development Roadmap 📋
 
-### 当前版本 (v2.0)
-- [x] 添加了国际化支持，支持14种语言切换
-- [x] 实现 IATA BCBP 标准二维码生成
-- [x] 响应式设计优化
+### Current Version (v2.0)
+- [x] Added internationalization support with 14 language options
+- [x] Implemented IATA BCBP standard QR code generation
+- [x] Responsive design optimization
 
-### 未来计划
-- [ ] 分享到微信功能
-- [ ] 更多航空公司 logo 支持
-- [ ] 移动端应用版本
-- [ ] 批量生成功能
-- [ ] 自定义主题和样式
+### Future Plans
+- [ ] WeChat sharing functionality
+- [ ] Support for more airline logos
+- [ ] Mobile application version
+- [ ] Batch generation features
+- [ ] Custom themes and styling
 
-## 致谢 💐
+## Acknowledgments 💐
 
-本项目的开发受到以下优秀项目的启发和帮助：
+This project was inspired and helped by the following excellent projects:
 
-### 项目参考
-- [**@georgesmith46/bcbp**](https://github.com/georgesmith46/bcbp) - IATA Bar Coded Boarding Pass 编码/解码库
-- [**@mavinii/boarding-pass**](https://github.com/mavinii/boarding-pass) - 登机牌设计参考
+### Project References
+- [**@georgesmith46/bcbp**](https://github.com/georgesmith46/bcbp) - IATA Bar Coded Boarding Pass encoding/decoding library
+- [**@mavinii/boarding-pass**](https://github.com/mavinii/boarding-pass) - Boarding pass design reference
 
-### 技术支持
-- **IATA** - Bar Coded Boarding Pass 标准制定
-- **QR Code Libraries** - 二维码生成技术支持
-- **Font Awesome** - 图标资源
-- **Google Fonts** - 字体资源
-
-感谢所有贡献者和测试用户的支持！🙏
+Special thanks to all contributors and testers for their support! 🙏
 
 ---
 
-🎫 **One-boarding** ©Josh Zeng. Released under the [PLACEHOLDER_LICENSE] License.
+🎫 **One-boarding** ©Josh Zeng. Released under the MIT License.
 
 Authored and maintained by Josh Zeng.
 

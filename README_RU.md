@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="readme/main.png" alt="One-boarding" height="200px">
   <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
   <em>Красивый настраиваемый генератор посадочных талонов с настоящими QR-кодами IATA BCBP</em>
 </div>
@@ -18,7 +17,7 @@
 
 ---
 
-[简体中文](/README.md) | [English](/README_EN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md)
+[简体中文](/README_CN.md) | [English](/README.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md)
 
 ---
 
@@ -33,6 +32,12 @@ One-boarding - это генератор посадочных талонов с 
 - [x] **Информация о пассажире**: Имя пассажира, номер билета, ID участника, уровень участника
 - [x] **Информация о посадке**: Время посадки, код класса салона, номер места, выход
 - [x] **QR-код**: Настоящие QR-коды посадки, соответствующие стандартам IATA BCBP
+
+## Скриншоты ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
 
 ## Быстрый старт 🚀
 
@@ -78,6 +83,6 @@ One-boarding - это генератор посадочных талонов с 
 
 ---
 
-🎫 **One-boarding** ©Josh Zeng. Released under the [PLACEHOLDER_LICENSE] License.
+🎫 **One-boarding** ©Josh Zeng. Released under the MIT License License.
 
 [@Blog](https://linkyou.top/) · [@GitHub](https://github.com/cornjosh) · [Live Demo](https://one-boarding.linkyou.top/)

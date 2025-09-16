@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="readme/main.png" alt="One-boarding" height="200px">
   <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
   <em>Schöner anpassbarer Bordkarten-Generator mit echten IATA BCBP QR-Codes</em>
 </div>
@@ -18,7 +17,7 @@
 
 ---
 
-[简体中文](/README.md) | [English](/README_EN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
+[简体中文](/README_CN.md) | [English](/README.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
 
 ---
 
@@ -33,6 +32,12 @@ One-boarding ist ein Open-Source-Bordkarten-Generator, der schöne, anpassbare B
 - [x] **Passagierinformationen**: Passagiername, Ticketnummer, Mitglieds-ID, Mitgliedslevel
 - [x] **Boarding-Informationen**: Boarding-Zeit, Kabinenklassencode, Sitzplatznummer, Gate
 - [x] **QR-Code**: Echte Boarding-QR-Codes konform mit IATA BCBP Standards
+
+## Screenshots ✨
+
+<div align="center">
+    <img src="readme/main.png" alt="One-boarding Interface" height="400px">
+</div>
 
 ## Schnellstart 🚀
 
@@ -78,6 +83,6 @@ Vielen Dank an alle Mitwirkenden und Tester für ihre Unterstützung! 🙏
 
 ---
 
-🎫 **One-boarding** ©Josh Zeng. Released under the [PLACEHOLDER_LICENSE] License.
+🎫 **One-boarding** ©Josh Zeng. Released under the MIT License License.
 
 [@Blog](https://linkyou.top/) · [@GitHub](https://github.com/cornjosh) · [Live Demo](https://one-boarding.linkyou.top/)
