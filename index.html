@@ -59,6 +59,22 @@
         justify-content: center;
       }
     }
+
+    /* For very small screens like iPhone SE */
+    @media (max-width: 400px) {
+      .language-selector-container {
+        position: static;
+        margin: 10px auto 20px auto;
+        max-width: 90%;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+      }
+      
+      .language-selector {
+        width: 100%;
+      }
+    }
   </style>
   <!-- 内嵌CSS样式 -->
   <style>
@@ -481,7 +497,7 @@
       </section>
     </main>
     <footer>
-      <span data-i18n="footer">请注意登机口临时变更信息，登机闸口于起飞前20分钟关闭。</span><br /><span data-i18n="footerEnglish">Please note that the boarding gate may change. The boarding gate closes 20
+      <span data-i18n="footer">请注意登机口临时变更信息，登机闸口于起飞前20分钟关闭。</span><br /><span id="footer-english" data-i18n="footerEnglish">Please note that the boarding gate may change. The boarding gate closes 20
       minutes before departure.</span>
     </footer>
   </div>

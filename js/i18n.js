@@ -123,6 +123,46 @@ class I18nManager {
       const translation = this.getTranslation(key);
       element.innerHTML = translation;
     });
+
+    // Handle footer English text visibility
+    const footerEnglish = document.getElementById('footer-english');
+    if (footerEnglish) {
+      // Hide English footer if current language is English
+      if (this.currentLanguage.startsWith('en')) {
+        footerEnglish.style.display = 'none';
+      } else {
+        footerEnglish.style.display = 'inline';
+      }
+    }
+
+    // Update demo data if no custom values are provided
+    this.updateDemoData();
+  }
+
+  updateDemoData() {
+    // Only update if these elements exist and don't have custom values from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (!urlParams.get('departureAirportName')) {
+      const departureElement = document.getElementById('departureAirportName');
+      if (departureElement) {
+        departureElement.textContent = this.getTranslation('demoData.departureAirportName');
+      }
+    }
+    
+    if (!urlParams.get('arrivalAirportName')) {
+      const arrivalElement = document.getElementById('arrivalAirportName');
+      if (arrivalElement) {
+        arrivalElement.textContent = this.getTranslation('demoData.arrivalAirportName');
+      }
+    }
+    
+    if (!urlParams.get('passengerMember')) {
+      const memberElement = document.getElementById('passengerMember');
+      if (memberElement) {
+        memberElement.textContent = this.getTranslation('demoData.passengerMember');
+      }
+    }
   }
 
   createLanguageSelector() {
@@ -211,8 +251,19 @@ class I18nManager {
   }
 
   updateModalTranslations() {
-    // This will be called when language changes to update any open modals
-    // We'll update the Swal.fire function to use translations
+    // Update existing modal if it's open
+    const modal = document.getElementById('swal2-backdrop');
+    if (modal && modal.classList.contains('show')) {
+      // Close current modal and reopen with new language
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.remove();
+        // Reopen modal with new translations
+        if (typeof showModal === 'function') {
+          showModal();
+        }
+      }, 300);
+    }
   }
 
   // Helper method to get translations for modal content

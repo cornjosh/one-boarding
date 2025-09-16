@@ -82,5 +82,10 @@
       "pl-PL": "Polski (Polska)",
       "hu-HU": "Magyar (Magyarország)"
     }
+  },
+  "demoData": {
+    "departureAirportName": "Internationaler Flughafen Peking-Daxing",
+    "arrivalAirportName": "Internationaler Flughafen Guangzhou Baiyun",
+    "passengerMember": "CZ ELITE PLUS"
   }
 }

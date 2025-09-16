@@ -82,5 +82,10 @@
       "pl-PL": "Polski (Polska)",
       "hu-HU": "Magyar (Magyarország)"
     }
+  },
+  "demoData": {
+    "departureAirportName": "Аэропорт Пекин Дасин",
+    "arrivalAirportName": "Аэропорт Гуанчжоу Байюнь",
+    "passengerMember": "CZ ЭЛИТ ПЛЮС"
   }
 }

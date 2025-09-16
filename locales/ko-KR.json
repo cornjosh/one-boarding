@@ -82,5 +82,10 @@
       "pl-PL": "Polski (Polska)",
       "hu-HU": "Magyar (Magyarország)"
     }
+  },
+  "demoData": {
+    "departureAirportName": "베이징 다싱 국제공항",
+    "arrivalAirportName": "광저우 바이윈 국제공항",
+    "passengerMember": "CZ 엘리트 플러스"
   }
 }

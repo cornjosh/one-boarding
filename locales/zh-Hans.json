@@ -82,5 +82,10 @@
       "pl-PL": "Polski (Polska)",
       "hu-HU": "Magyar (Magyarország)"
     }
+  },
+  "demoData": {
+    "departureAirportName": "北京大兴国际机场",
+    "arrivalAirportName": "广州白云国际机场",
+    "passengerMember": "南航精英级会员"
   }
 }

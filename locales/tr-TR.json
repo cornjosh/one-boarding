@@ -81,6 +81,11 @@
       "tr-TR": "Türkçe (Türkiye)",
       "pl-PL": "Polski (Polska)",
       "hu-HU": "Magyar (Magyarország)"
-    }
+    },
+  "demoData": {
+    "departureAirportName": "Beijing Daxing International Airport",
+    "arrivalAirportName": "Guangzhou Baiyun International Airport",
+    "passengerMember": "CZ ELITE PLUS"
+  }
   }
 }
