@@ -1,0 +1,91 @@
+{
+  "title": "Электронный Посадочный Талон",
+  "flightNumber": "№ Рейса",
+  "flightDate": "Дата Рейса",
+  "boardingTime": "Время Посадки",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "Класс",
+  "classShort": "CLASS",
+  "seat": "Место",
+  "seatShort": "SEAT",
+  "gate": "Выход",
+  "gateShort": "GATE",
+  "boardingNumber": "№ Посадки",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "QR-код Посадки",
+  "footer": "Обратите внимание, что выход на посадку может измениться. Выход на посадку закрывается за 20 минут до вылета.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ Настроить Информацию Посадочного Талона",
+  "modalFields": {
+    "passengerName": "Имя Пассажира(*)",
+    "ticketNumber": "Номер Билета",
+    "pnr": "PNR(*)",
+    "memberID": "ID Участника",
+    "memberLevel": "Уровень Участника",
+    "carrierCode": "Код Авиакомпании(*)",
+    "flightNumberDigits": "Номер Рейса (цифры)(*)",
+    "flightDate": "Дата Рейса(*)",
+    "departureAirport": "Код Аэропорта Вылета(*)",
+    "departureAirportName": "Название Аэропорта Вылета",
+    "departureTime": "Время Вылета",
+    "arrivalAirport": "Код Аэропорта Прилёта(*)",
+    "arrivalAirportName": "Название Аэропорта Прилёта",
+    "arrivalTime": "Время Прилёта",
+    "arrivalDayOffset": "Смещение Дня Прилёта",
+    "boardingTime": "Время Посадки",
+    "compartmentCode": "Код Класса Салона(*)",
+    "seatNumber": "Номер Места(*)",
+    "gate": "Выход",
+    "checkInSequenceNumber": "Номер Последовательности Регистрации(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 Сгенерировать Посадочный Талон",
+    "useDemo": "📋 Использовать Демо Информацию"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 Использование Демо Информации",
+    "text": "Демо данные были загружены для вас!"
+  },
+  "placeholders": {
+    "passengerName": "Введите имя пассажира",
+    "ticketNumber": "Введите номер билета",
+    "pnr": "Введите PNR",
+    "memberID": "Введите ID участника",
+    "memberLevel": "Введите уровень участника",
+    "carrierCode": "напр.: CZ",
+    "flightNumberDigits": "напр.: 1234",
+    "departureAirport": "напр.: PKX",
+    "departureAirportName": "напр.: Международный аэропорт Пекин Дасин",
+    "arrivalAirport": "напр.: CAN",
+    "arrivalAirportName": "напр.: Международный аэропорт Гуанчжоу Байюнь",
+    "arrivalDayOffset": "напр.: +1",
+    "compartmentCode": "напр.: Y",
+    "seatNumber": "напр.: 1A",
+    "gate": "напр.: A12",
+    "checkInSequenceNumber": "напр.: 025"
+  },
+  "languageSelector": {
+    "label": "Выбрать Язык",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    }
+  },
+  "demoData": {
+    "departureAirportName": "Аэропорт Пекин Дасин",
+    "arrivalAirportName": "Аэропорт Гуанчжоу Байюнь",
+    "passengerMember": "CZ ЭЛИТ ПЛЮС"
+  }
+}

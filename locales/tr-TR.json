@@ -1,0 +1,91 @@
+{
+  "title": "Elektronik Biniş Kartı",
+  "flightNumber": "Uçuş No",
+  "flightDate": "Uçuş Tarihi",
+  "boardingTime": "Biniş Saati",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "Sınıf",
+  "classShort": "CLASS",
+  "seat": "Koltuk",
+  "seatShort": "SEAT",
+  "gate": "Kapı",
+  "gateShort": "GATE",
+  "boardingNumber": "Biniş No",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "Biniş QR Kodu",
+  "footer": "Biniş kapısının değişebileceğini lütfen unutmayın. Biniş kapısı kalkıştan 20 dakika önce kapanır.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ Biniş Kartı Bilgilerini Özelleştir",
+  "modalFields": {
+    "passengerName": "Yolcu Adı(*)",
+    "ticketNumber": "Bilet Numarası",
+    "pnr": "PNR(*)",
+    "memberID": "Üye ID",
+    "memberLevel": "Üye Seviyesi",
+    "carrierCode": "Havayolu Kodu(*)",
+    "flightNumberDigits": "Uçuş Numarası (rakamlar)(*)",
+    "flightDate": "Uçuş Tarihi(*)",
+    "departureAirport": "Kalkış Havalimanı Kodu(*)",
+    "departureAirportName": "Kalkış Havalimanı Adı",
+    "departureTime": "Kalkış Saati",
+    "arrivalAirport": "Varış Havalimanı Kodu(*)",
+    "arrivalAirportName": "Varış Havalimanı Adı",
+    "arrivalTime": "Varış Saati",
+    "arrivalDayOffset": "Varış Günü Kaydırma",
+    "boardingTime": "Biniş Saati",
+    "compartmentCode": "Kabin Sınıfı Kodu(*)",
+    "seatNumber": "Koltuk Numarası(*)",
+    "gate": "Kapı",
+    "checkInSequenceNumber": "Check-in Sıra Numarası(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 Biniş Kartı Oluştur",
+    "useDemo": "📋 Demo Bilgilerini Kullan"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 Demo Bilgilerini Kullan",
+    "text": "Demo veriler sizin için yüklendi!"
+  },
+  "placeholders": {
+    "passengerName": "Yolcu adını girin",
+    "ticketNumber": "Bilet numarasını girin",
+    "pnr": "PNR'yi girin",
+    "memberID": "Üye ID'sini girin",
+    "memberLevel": "Üye seviyesini girin",
+    "carrierCode": "örn: CZ",
+    "flightNumberDigits": "örn: 1234",
+    "departureAirport": "örn: PKX",
+    "departureAirportName": "örn: Beijing Daxing Uluslararası Havalimanı",
+    "arrivalAirport": "örn: CAN",
+    "arrivalAirportName": "örn: Guangzhou Baiyun Uluslararası Havalimanı",
+    "arrivalDayOffset": "örn: +1",
+    "compartmentCode": "örn: Y",
+    "seatNumber": "örn: 1A",
+    "gate": "örn: A12",
+    "checkInSequenceNumber": "örn: 025"
+  },
+  "languageSelector": {
+    "label": "Dil Seç",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    },
+  "demoData": {
+    "departureAirportName": "Beijing Daxing International Airport",
+    "arrivalAirportName": "Guangzhou Baiyun International Airport",
+    "passengerMember": "CZ ELITE PLUS"
+  }
+  }
+}

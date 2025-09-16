@@ -5,12 +5,47 @@
 ## 项目概述
 `one-boarding` 可用于生成一个美观、自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
 
+## 国际化支持 (i18n)
+本项目支持 14 种语言，可在登机牌页面选择不同的显示语言：
+
+### 支持的语言
+- **zh-Hans**: 简体中文
+- **zh-Hant**: 繁體中文  
+- **en-US**: English (United States)
+- **fr-FR**: Français (France)
+- **de-DE**: Deutsch (Deutschland)
+- **es-ES**: Español (España)
+- **pt-PT**: Português (Portugal)
+- **it-IT**: Italiano (Italia)
+- **ru-RU**: Русский (Россия)
+- **ja-JP**: 日本語 (日本)
+- **ko-KR**: 한국어 (대한민국)
+- **tr-TR**: Türkçe (Türkiye)
+- **pl-PL**: Polski (Polska)
+- **hu-HU**: Magyar (Magyarország)
+
+### 语言切换方式
+1. **自动检测**: 根据浏览器语言自动选择对应语言
+2. **URL参数**: 通过 `?lang=language-code` 指定语言，如 `?lang=en-US`
+3. **页面选择器**: 使用页面右上角的语言选择下拉框
+4. **本地存储**: 选择的语言会保存在浏览器中，下次访问时自动应用
+
+### 翻译内容
+所有登机牌相关的航空术语都根据各地区的习惯进行了专业翻译，包括：
+- 登机牌标题和字段标签
+- 航空术语（航班号、登机口、座位等）
+- 表单标签和占位符文本
+- 按钮文本和提示信息
+
 ## 项目结构
 项目主要包含单一 `html` 文件，方便部署
 
 ### 文件说明
 - `index.html`：主要的 HTML 文件，包含页面的整体结构、登机牌信息展示以及简易的信息输入框
-- `img/*`：航司 logo 
+- `js/i18n.js`：国际化功能实现，处理语言加载和文本替换
+- `js/bcbp.min.js` 和 `js/qrcode.min.js`：第三方库
+- `locales/*.json`：各语言的翻译文件
+- `img/*`：航司 logo
 
 ## 页面功能
 ### 登机牌信息展示
@@ -32,3 +67,6 @@
 
 ## 兼容性
 在现代浏览器（如 Chrome、Firefox、Safari 等）中进行了测试。旧版本的浏览器中可能会出现样式或功能问题
+
+## 更新记录
+- **v2.0**: 添加了国际化支持，支持14种语言切换

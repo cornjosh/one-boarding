@@ -1,0 +1,91 @@
+{
+  "title": "Tarjeta de Embarque Electrónica",
+  "flightNumber": "N° de Vuelo",
+  "flightDate": "Fecha de Vuelo",
+  "boardingTime": "Hora de Embarque",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "Clase",
+  "classShort": "CLASS",
+  "seat": "Asiento",
+  "seatShort": "SEAT",
+  "gate": "Puerta",
+  "gateShort": "GATE",
+  "boardingNumber": "N° de Embarque",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "Código QR de Embarque",
+  "footer": "Tenga en cuenta que la puerta de embarque puede cambiar. La puerta de embarque cierra 20 minutos antes de la salida.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ Personalizar Información de la Tarjeta de Embarque",
+  "modalFields": {
+    "passengerName": "Nombre del Pasajero(*)",
+    "ticketNumber": "Número de Billete",
+    "pnr": "PNR(*)",
+    "memberID": "ID de Miembro",
+    "memberLevel": "Nivel de Miembro",
+    "carrierCode": "Código de Aerolínea(*)",
+    "flightNumberDigits": "Número de Vuelo (dígitos)(*)",
+    "flightDate": "Fecha de Vuelo(*)",
+    "departureAirport": "Código Aeropuerto de Salida(*)",
+    "departureAirportName": "Nombre Aeropuerto de Salida",
+    "departureTime": "Hora de Salida",
+    "arrivalAirport": "Código Aeropuerto de Llegada(*)",
+    "arrivalAirportName": "Nombre Aeropuerto de Llegada",
+    "arrivalTime": "Hora de Llegada",
+    "arrivalDayOffset": "Desplazamiento Día de Llegada",
+    "boardingTime": "Hora de Embarque",
+    "compartmentCode": "Código Clase de Cabina(*)",
+    "seatNumber": "Número de Asiento(*)",
+    "gate": "Puerta",
+    "checkInSequenceNumber": "Número de Secuencia de Check-in(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 Generar Tarjeta de Embarque",
+    "useDemo": "📋 Usar Información de Demostración"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 Usar Información de Demostración",
+    "text": "¡Se han cargado los datos de demostración para usted!"
+  },
+  "placeholders": {
+    "passengerName": "Ingrese el nombre del pasajero",
+    "ticketNumber": "Ingrese el número de billete",
+    "pnr": "Ingrese el PNR",
+    "memberID": "Ingrese el ID de miembro",
+    "memberLevel": "Ingrese el nivel de miembro",
+    "carrierCode": "ej.: CZ",
+    "flightNumberDigits": "ej.: 1234",
+    "departureAirport": "ej.: PKX",
+    "departureAirportName": "ej.: Aeropuerto Internacional de Beijing Daxing",
+    "arrivalAirport": "ej.: CAN",
+    "arrivalAirportName": "ej.: Aeropuerto Internacional de Guangzhou Baiyun",
+    "arrivalDayOffset": "ej.: +1",
+    "compartmentCode": "ej.: Y",
+    "seatNumber": "ej.: 1A",
+    "gate": "ej.: A12",
+    "checkInSequenceNumber": "ej.: 025"
+  },
+  "languageSelector": {
+    "label": "Seleccionar Idioma",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    },
+  "demoData": {
+    "departureAirportName": "Beijing Daxing International Airport",
+    "arrivalAirportName": "Guangzhou Baiyun International Airport",
+    "passengerMember": "CZ ELITE PLUS"
+  }
+  }
+}

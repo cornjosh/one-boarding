@@ -1,0 +1,91 @@
+{
+  "title": "Elektronikus Beszállókártya",
+  "flightNumber": "Járatszám",
+  "flightDate": "Járat Dátuma",
+  "boardingTime": "Beszállási Idő",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "Osztály",
+  "classShort": "CLASS",
+  "seat": "Ülőhely",
+  "seatShort": "SEAT",
+  "gate": "Kapu",
+  "gateShort": "GATE",
+  "boardingNumber": "Beszállási Szám",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "Beszállási QR Kód",
+  "footer": "Kérjük, vegye figyelembe, hogy a beszállási kapu változhat. A beszállási kapu az indulás előtt 20 perccel bezár.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ Beszállókártya Információk Testreszabása",
+  "modalFields": {
+    "passengerName": "Utas Neve(*)",
+    "ticketNumber": "Jegy Száma",
+    "pnr": "PNR(*)",
+    "memberID": "Tag Azonosító",
+    "memberLevel": "Tagsági Szint",
+    "carrierCode": "Légitársaság Kódja(*)",
+    "flightNumberDigits": "Járatszám (számjegyek)(*)",
+    "flightDate": "Járat Dátuma(*)",
+    "departureAirport": "Indulási Repülőtér Kódja(*)",
+    "departureAirportName": "Indulási Repülőtér Neve",
+    "departureTime": "Indulási Idő",
+    "arrivalAirport": "Érkezési Repülőtér Kódja(*)",
+    "arrivalAirportName": "Érkezési Repülőtér Neve",
+    "arrivalTime": "Érkezési Idő",
+    "arrivalDayOffset": "Érkezési Nap Eltolás",
+    "boardingTime": "Beszállási Idő",
+    "compartmentCode": "Kabint Osztály Kódja(*)",
+    "seatNumber": "Ülőhely Száma(*)",
+    "gate": "Kapu",
+    "checkInSequenceNumber": "Bejelentkezési Sorszám(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 Beszállókártya Generálása",
+    "useDemo": "📋 Demó Információk Használata"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 Demó Információk Használata",
+    "text": "A demó adatok betöltődtek az Ön számára!"
+  },
+  "placeholders": {
+    "passengerName": "Adja meg az utas nevét",
+    "ticketNumber": "Adja meg a jegy számát",
+    "pnr": "Adja meg a PNR-t",
+    "memberID": "Adja meg a tag azonosítót",
+    "memberLevel": "Adja meg a tagsági szintet",
+    "carrierCode": "pl.: CZ",
+    "flightNumberDigits": "pl.: 1234",
+    "departureAirport": "pl.: PKX",
+    "departureAirportName": "pl.: Peking Daxing Nemzetközi Repülőtér",
+    "arrivalAirport": "pl.: CAN",
+    "arrivalAirportName": "pl.: Guangzhou Baiyun Nemzetközi Repülőtér",
+    "arrivalDayOffset": "pl.: +1",
+    "compartmentCode": "pl.: Y",
+    "seatNumber": "pl.: 1A",
+    "gate": "pl.: A12",
+    "checkInSequenceNumber": "pl.: 025"
+  },
+  "languageSelector": {
+    "label": "Nyelv Kiválasztása",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    },
+  "demoData": {
+    "departureAirportName": "Beijing Daxing International Airport",
+    "arrivalAirportName": "Guangzhou Baiyun International Airport",
+    "passengerMember": "CZ ELITE PLUS"
+  }
+  }
+}

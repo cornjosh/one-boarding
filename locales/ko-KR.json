@@ -1,0 +1,91 @@
+{
+  "title": "전자 탑승권",
+  "flightNumber": "항공편명",
+  "flightDate": "운항일",
+  "boardingTime": "탑승시간",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "좌석등급",
+  "classShort": "CLASS",
+  "seat": "좌석",
+  "seatShort": "SEAT",
+  "gate": "게이트",
+  "gateShort": "GATE",
+  "boardingNumber": "탑승번호",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "탑승 QR코드",
+  "footer": "탑승게이트가 변경될 수 있습니다. 탑승게이트는 출발 20분 전에 닫힙니다.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ 탑승권 정보 사용자 정의",
+  "modalFields": {
+    "passengerName": "승객명(*)",
+    "ticketNumber": "항공권 번호",
+    "pnr": "PNR(*)",
+    "memberID": "회원 ID",
+    "memberLevel": "회원 등급",
+    "carrierCode": "항공사 코드(*)",
+    "flightNumberDigits": "항공편명 (숫자)(*)",
+    "flightDate": "운항일(*)",
+    "departureAirport": "출발공항 코드(*)",
+    "departureAirportName": "출발공항명",
+    "departureTime": "출발시간",
+    "arrivalAirport": "도착공항 코드(*)",
+    "arrivalAirportName": "도착공항명",
+    "arrivalTime": "도착시간",
+    "arrivalDayOffset": "도착일 오프셋",
+    "boardingTime": "탑승시간",
+    "compartmentCode": "객실등급 코드(*)",
+    "seatNumber": "좌석번호(*)",
+    "gate": "게이트",
+    "checkInSequenceNumber": "체크인 순서번호(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 탑승권 생성",
+    "useDemo": "📋 데모 정보 사용"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 데모 정보 사용",
+    "text": "데모 데이터가 로드되었습니다!"
+  },
+  "placeholders": {
+    "passengerName": "승객명을 입력하세요",
+    "ticketNumber": "항공권 번호를 입력하세요",
+    "pnr": "PNR을 입력하세요",
+    "memberID": "회원 ID를 입력하세요",
+    "memberLevel": "회원 등급을 입력하세요",
+    "carrierCode": "예: CZ",
+    "flightNumberDigits": "예: 1234",
+    "departureAirport": "예: PKX",
+    "departureAirportName": "예: 베이징 다싱 국제공항",
+    "arrivalAirport": "예: CAN",
+    "arrivalAirportName": "예: 광저우 바이윈 국제공항",
+    "arrivalDayOffset": "예: +1",
+    "compartmentCode": "예: Y",
+    "seatNumber": "예: 1A",
+    "gate": "예: A12",
+    "checkInSequenceNumber": "예: 025"
+  },
+  "languageSelector": {
+    "label": "언어 선택",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    }
+  },
+  "demoData": {
+    "departureAirportName": "베이징 다싱 국제공항",
+    "arrivalAirportName": "광저우 바이윈 국제공항",
+    "passengerMember": "CZ 엘리트 플러스"
+  }
+}

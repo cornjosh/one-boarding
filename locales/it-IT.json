@@ -1,0 +1,91 @@
+{
+  "title": "Carta d'Imbarco Elettronica",
+  "flightNumber": "N° Volo",
+  "flightDate": "Data Volo",
+  "boardingTime": "Ora d'Imbarco",
+  "boardingTimeShort": "BOD.TIME",
+  "class": "Classe",
+  "classShort": "CLASS",
+  "seat": "Posto",
+  "seatShort": "SEAT",
+  "gate": "Gate",
+  "gateShort": "GATE",
+  "boardingNumber": "N° d'Imbarco",
+  "boardingNumberShort": "BOD.NO.",
+  "qrCodeLabel": "Codice QR d'Imbarco",
+  "footer": "Si prega di notare che il gate d'imbarco può cambiare. Il gate d'imbarco chiude 20 minuti prima della partenza.",
+  "footerEnglish": "Please note that the boarding gate may change. The boarding gate closes 20 minutes before departure.",
+  "modalTitle": "✈️ Personalizza Informazioni Carta d'Imbarco",
+  "modalFields": {
+    "passengerName": "Nome Passeggero(*)",
+    "ticketNumber": "Numero Biglietto",
+    "pnr": "PNR(*)",
+    "memberID": "ID Membro",
+    "memberLevel": "Livello Membro",
+    "carrierCode": "Codice Vettore(*)",
+    "flightNumberDigits": "Numero Volo (cifre)(*)",
+    "flightDate": "Data Volo(*)",
+    "departureAirport": "Codice Aeroporto Partenza(*)",
+    "departureAirportName": "Nome Aeroporto Partenza",
+    "departureTime": "Ora Partenza",
+    "arrivalAirport": "Codice Aeroporto Arrivo(*)",
+    "arrivalAirportName": "Nome Aeroporto Arrivo",
+    "arrivalTime": "Ora Arrivo",
+    "arrivalDayOffset": "Offset Giorno Arrivo",
+    "boardingTime": "Ora d'Imbarco",
+    "compartmentCode": "Codice Classe Cabina(*)",
+    "seatNumber": "Numero Posto(*)",
+    "gate": "Gate",
+    "checkInSequenceNumber": "Numero Sequenza Check-in(*)"
+  },
+  "modalButtons": {
+    "generate": "🎫 Genera Carta d'Imbarco",
+    "useDemo": "📋 Usa Informazioni Demo"
+  },
+  "modalDemoSuccess": {
+    "title": "🎉 Usa Informazioni Demo",
+    "text": "I dati demo sono stati caricati per te!"
+  },
+  "placeholders": {
+    "passengerName": "Inserisci nome passeggero",
+    "ticketNumber": "Inserisci numero biglietto",
+    "pnr": "Inserisci PNR",
+    "memberID": "Inserisci ID membro",
+    "memberLevel": "Inserisci livello membro",
+    "carrierCode": "es.: CZ",
+    "flightNumberDigits": "es.: 1234",
+    "departureAirport": "es.: PKX",
+    "departureAirportName": "es.: Aeroporto Internazionale di Pechino Daxing",
+    "arrivalAirport": "es.: CAN",
+    "arrivalAirportName": "es.: Aeroporto Internazionale di Guangzhou Baiyun",
+    "arrivalDayOffset": "es.: +1",
+    "compartmentCode": "es.: Y",
+    "seatNumber": "es.: 1A",
+    "gate": "es.: A12",
+    "checkInSequenceNumber": "es.: 025"
+  },
+  "languageSelector": {
+    "label": "Seleziona Lingua",
+    "languages": {
+      "zh-Hans": "简体中文",
+      "zh-Hant": "繁體中文",
+      "en-US": "English (US)",
+      "fr-FR": "Français (France)",
+      "de-DE": "Deutsch (Deutschland)",
+      "es-ES": "Español (España)",
+      "pt-PT": "Português (Portugal)",
+      "it-IT": "Italiano (Italia)",
+      "ru-RU": "Русский (Россия)",
+      "ja-JP": "日本語 (日本)",
+      "ko-KR": "한국어 (대한민국)",
+      "tr-TR": "Türkçe (Türkiye)",
+      "pl-PL": "Polski (Polska)",
+      "hu-HU": "Magyar (Magyarország)"
+    },
+  "demoData": {
+    "departureAirportName": "Beijing Daxing International Airport",
+    "arrivalAirportName": "Guangzhou Baiyun International Airport",
+    "passengerMember": "CZ ELITE PLUS"
+  }
+  }
+}
