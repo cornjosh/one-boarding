@@ -9,6 +9,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>登机牌</title>
+  <style>
+    /* Language selector styling */
+    .language-selector-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 10px 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .language-selector-container label {
+      color: #115bb6;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .language-selector {
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 13px;
+      font-family: "Rubik", sans-serif;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+
+    .language-selector:focus {
+      outline: none;
+      border-color: #115bb6;
+    }
+
+    @media (max-width: 768px) {
+      .language-selector-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+    }
+  </style>
   <!-- 内嵌CSS样式 -->
   <style>
     * {
@@ -361,16 +412,16 @@
 
 <body>
   <div id="bording-pass">
-    <h1>电子登机牌</h1>
+    <h1 data-i18n="title">电子登机牌</h1>
     <main id="ticket">
       <section class="top grid">
         <div class="flight grid column">
           <div class="number">
-            <p>航班号 FLIGHT NO.</p>
+            <p><span data-i18n="flightNumber">航班号</span> FLIGHT NO.</p>
             <strong id="flightNumber"></strong>
           </div>
           <div class="date text-right">
-            <p>航班日期 FLIGHT DATE</p>
+            <p><span data-i18n="flightDate">航班日期</span> FLIGHT DATE</p>
             <strong id="flightDate"></strong>
           </div>
         </div>
@@ -404,37 +455,38 @@
         <div class="container grid column">
           <dl class="grid">
             <dt>
-              <p>登机时间 BOD.TIME</p>
+              <p><span data-i18n="boardingTime">登机时间</span> <span data-i18n="boardingTimeShort">BOD.TIME</span></p>
               <time id="boardingTime"></time>
             </dt>
             <dt>
-              <p>舱位 CLASS</p>
+              <p><span data-i18n="class">舱位</span> <span data-i18n="classShort">CLASS</span></p>
               <strong id="compartmentCode"></strong>
             </dt>
             <dt>
-              <p>座位号 SEAT</p>
+              <p><span data-i18n="seat">座位号</span> <span data-i18n="seatShort">SEAT</span></p>
               <strong id="seatNumber"></strong>
             </dt>
             <dt>
-              <p>登机口 GATE</p>
+              <p><span data-i18n="gate">登机口</span> <span data-i18n="gateShort">GATE</span></p>
               <strong id="gate"></strong>
             </dt>
           </dl>
 
           <div class="qrcode grid">
             <div id="qrcode" alt="二维码图片"></div>
-            <p>乘机二维码</p>
+            <p data-i18n="qrCodeLabel">乘机二维码</p>
           </div>
         </div>
-        <p>登机序号 BOD.NO. <strong id="checkInSequenceNumber"></strong></p>
+        <p><span data-i18n="boardingNumber">登机序号</span> <span data-i18n="boardingNumberShort">BOD.NO.</span> <strong id="checkInSequenceNumber"></strong></p>
       </section>
     </main>
     <footer>
-      请注意登机口临时变更信息，登机闸口于起飞前20分钟关闭。<br />Please note that the boarding gate may change. The boarding gate closes 20
-      minutes before departure.
+      <span data-i18n="footer">请注意登机口临时变更信息，登机闸口于起飞前20分钟关闭。</span><br /><span data-i18n="footerEnglish">Please note that the boarding gate may change. The boarding gate closes 20
+      minutes before departure.</span>
     </footer>
   </div>
 </body>
+<script src="js/i18n.js"></script>
 <script src="js/bcbp.min.js"></script>
 <script src="js/qrcode.min.js"></script>
 <script type="text/javascript">
@@ -576,95 +628,103 @@
 
   // 操作弹窗 - 使用自定义的 SweetAlert2 风格模态框
   function showModal() {
+    // Wait for i18n to be ready
+    if (typeof i18nManager === 'undefined' || !i18nManager) {
+      setTimeout(showModal, 100);
+      return;
+    }
+
+    const translations = i18nManager.getModalTranslations();
+    
     Swal.fire({
-      title: '✈️ 自定义登机牌信息',
+      title: translations.title,
       html: `
         <div class="boarding-form">
           <div class="form-group">
-            <label for="swal-inputPassengerName">乘客姓名(*)</label>
-            <input type="text" id="swal-inputPassengerName" placeholder="请输入乘客姓名" />
+            <label for="swal-inputPassengerName">${translations.fields.passengerName}</label>
+            <input type="text" id="swal-inputPassengerName" placeholder="${translations.placeholders.passengerName}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputTicketNumber">票号</label>
-            <input type="text" id="swal-inputTicketNumber" placeholder="请输入票号" />
+            <label for="swal-inputTicketNumber">${translations.fields.ticketNumber}</label>
+            <input type="text" id="swal-inputTicketNumber" placeholder="${translations.placeholders.ticketNumber}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputOperatingCarrierPNR">PNR(*)</label>
-            <input type="text" id="swal-inputOperatingCarrierPNR" placeholder="请输入PNR" />
+            <label for="swal-inputOperatingCarrierPNR">${translations.fields.pnr}</label>
+            <input type="text" id="swal-inputOperatingCarrierPNR" placeholder="${translations.placeholders.pnr}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputPassengerMemberID">会员ID</label>
-            <input type="text" id="swal-inputPassengerMemberID" placeholder="请输入会员ID" />
+            <label for="swal-inputPassengerMemberID">${translations.fields.memberID}</label>
+            <input type="text" id="swal-inputPassengerMemberID" placeholder="${translations.placeholders.memberID}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputPassengerMember">会员等级</label>
-            <input type="text" id="swal-inputPassengerMember" placeholder="请输入会员等级" />
+            <label for="swal-inputPassengerMember">${translations.fields.memberLevel}</label>
+            <input type="text" id="swal-inputPassengerMember" placeholder="${translations.placeholders.memberLevel}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputOperatingCarrierDesignator">承运人代码(*)</label>
-            <input type="text" id="swal-inputOperatingCarrierDesignator" placeholder="如: CZ" />
+            <label for="swal-inputOperatingCarrierDesignator">${translations.fields.carrierCode}</label>
+            <input type="text" id="swal-inputOperatingCarrierDesignator" placeholder="${translations.placeholders.carrierCode}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputFlightNumber">航班号(数字)(*)</label>
-            <input type="text" id="swal-inputFlightNumber" placeholder="如: 1234" />
+            <label for="swal-inputFlightNumber">${translations.fields.flightNumberDigits}</label>
+            <input type="text" id="swal-inputFlightNumber" placeholder="${translations.placeholders.flightNumberDigits}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputFlightDate">航班日期(*)</label>
+            <label for="swal-inputFlightDate">${translations.fields.flightDate}</label>
             <input type="date" id="swal-inputFlightDate" />
           </div>
           <div class="form-group">
-            <label for="swal-inputDepartureAirport">出发机场代码(*)</label>
-            <input type="text" id="swal-inputDepartureAirport" placeholder="如: PKX" />
+            <label for="swal-inputDepartureAirport">${translations.fields.departureAirport}</label>
+            <input type="text" id="swal-inputDepartureAirport" placeholder="${translations.placeholders.departureAirport}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputDepartureAirportName">出发机场名称</label>
-            <input type="text" id="swal-inputDepartureAirportName" placeholder="如: 北京大兴国际机场" />
+            <label for="swal-inputDepartureAirportName">${translations.fields.departureAirportName}</label>
+            <input type="text" id="swal-inputDepartureAirportName" placeholder="${translations.placeholders.departureAirportName}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputDepartureTime">出发时间</label>
+            <label for="swal-inputDepartureTime">${translations.fields.departureTime}</label>
             <input type="time" id="swal-inputDepartureTime" />
           </div>
           <div class="form-group">
-            <label for="swal-inputArrivalAirport">到达机场代码(*)</label>
-            <input type="text" id="swal-inputArrivalAirport" placeholder="如: CAN" />
+            <label for="swal-inputArrivalAirport">${translations.fields.arrivalAirport}</label>
+            <input type="text" id="swal-inputArrivalAirport" placeholder="${translations.placeholders.arrivalAirport}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputArrivalAirportName">到达机场名称</label>
-            <input type="text" id="swal-inputArrivalAirportName" placeholder="如: 广州白云国际机场" />
+            <label for="swal-inputArrivalAirportName">${translations.fields.arrivalAirportName}</label>
+            <input type="text" id="swal-inputArrivalAirportName" placeholder="${translations.placeholders.arrivalAirportName}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputArrivalTime">到达时间</label>
+            <label for="swal-inputArrivalTime">${translations.fields.arrivalTime}</label>
             <input type="time" id="swal-inputArrivalTime" />
           </div>
           <div class="form-group">
-            <label for="swal-inputArrivalDayOffset">到达日期偏移</label>
-            <input type="text" id="swal-inputArrivalDayOffset" placeholder="如: +1" />
+            <label for="swal-inputArrivalDayOffset">${translations.fields.arrivalDayOffset}</label>
+            <input type="text" id="swal-inputArrivalDayOffset" placeholder="${translations.placeholders.arrivalDayOffset}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputBoardingTime">登机时间</label>
+            <label for="swal-inputBoardingTime">${translations.fields.boardingTime}</label>
             <input type="time" id="swal-inputBoardingTime" />
           </div>
           <div class="form-group">
-            <label for="swal-inputCompartmentCode">舱位代码(*)</label>
-            <input type="text" id="swal-inputCompartmentCode" placeholder="如: Y" />
+            <label for="swal-inputCompartmentCode">${translations.fields.compartmentCode}</label>
+            <input type="text" id="swal-inputCompartmentCode" placeholder="${translations.placeholders.compartmentCode}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputSeatNumber">座位号(*)</label>
-            <input type="text" id="swal-inputSeatNumber" placeholder="如: 1A" />
+            <label for="swal-inputSeatNumber">${translations.fields.seatNumber}</label>
+            <input type="text" id="swal-inputSeatNumber" placeholder="${translations.placeholders.seatNumber}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputGate">登机口</label>
-            <input type="text" id="swal-inputGate" placeholder="如: A12" />
+            <label for="swal-inputGate">${translations.fields.gate}</label>
+            <input type="text" id="swal-inputGate" placeholder="${translations.placeholders.gate}" />
           </div>
           <div class="form-group">
-            <label for="swal-inputCheckInSequenceNumber">值机序号(*)</label>
-            <input type="text" id="swal-inputCheckInSequenceNumber" placeholder="如: 025" />
+            <label for="swal-inputCheckInSequenceNumber">${translations.fields.checkInSequenceNumber}</label>
+            <input type="text" id="swal-inputCheckInSequenceNumber" placeholder="${translations.placeholders.checkInSequenceNumber}" />
           </div>
         </div>
       `,
       showCancelButton: true,
-      confirmButtonText: '🎫 生成登机牌',
-      cancelButtonText: '📋 使用演示信息',
+      confirmButtonText: translations.buttons.generate,
+      cancelButtonText: translations.buttons.useDemo,
       preConfirm: () => {
         return getSwalInputValues();
       }
@@ -678,8 +738,8 @@
         // 用户点击了使用演示信息按钮 - 显示成功消息但不重新加载页面
         setTimeout(() => {
           Swal.fire({
-            title: '🎉 使用演示信息',
-            text: '已为您加载演示数据！',
+            title: translations.demoSuccess.title,
+            text: translations.demoSuccess.text,
             timer: 1500
           });
         }, 350); // 等待前一个模态框完全关闭
@@ -744,7 +804,10 @@
   function showModalOnce() {
     if (!hasShownModal) {
       hasShownModal = true;
-      showModal();
+      // Wait for i18n to be ready before showing modal
+      setTimeout(() => {
+        showModal();
+      }, 500);
     }
     return "HELLO/WORLD";
   }
