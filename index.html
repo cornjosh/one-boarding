@@ -199,36 +199,162 @@
     }
 
 
-    .modal {
-      display: none;
-      /* Hidden by default */
+    /* 自定义美观模态框 - SweetAlert2 风格 */
+    .swal2-backdrop {
       position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
-      /* Full width */
       height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 10000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    /* Modal Content/Box */
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      /* 15% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      /* Could be more or less, depending on screen size */
+    .swal2-backdrop.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    .swal2-popup {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+      transform: scale(0.7);
+      transition: transform 0.3s ease;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .swal2-backdrop.show .swal2-popup {
+      transform: scale(1);
+    }
+
+    .swal2-header {
+      padding: 30px 30px 20px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .swal2-title {
+      color: #115bb6;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .swal2-content {
+      padding: 20px 30px;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .boarding-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input {
+      padding: 10px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: "Rubik", sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #115bb6;
+      box-shadow: 0 0 0 3px rgba(17, 91, 182, 0.1);
+    }
+
+    .form-group input::placeholder {
+      color: #999;
+    }
+
+    .swal2-actions {
+      padding: 20px 30px 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .swal2-button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: "Rubik", sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+
+    .swal2-confirm {
+      background: linear-gradient(135deg, #115bb6, #0f4a95);
+      color: white;
+    }
+
+    .swal2-confirm:hover {
+      background: linear-gradient(135deg, #0f4a95, #0d3e7d);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(17, 91, 182, 0.3);
+    }
+
+    .swal2-cancel {
+      background: #f8f9fa;
+      color: #6c757d;
+      border: 2px solid #e9ecef;
+    }
+
+    .swal2-cancel:hover {
+      background: #e9ecef;
+      color: #495057;
+      transform: translateY(-2px);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .boarding-form {
+        grid-template-columns: 1fr;
+      }
+      
+      .swal2-popup {
+        width: 95%;
+        margin: 20px;
+      }
+      
+      .swal2-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -308,94 +434,6 @@
       minutes before departure.
     </footer>
   </div>
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <button onclick="hideModal()">使用演示信息</button>
-      <form>
-        <div>
-          <label for="inputPassengerName">乘客姓名(*)</label>
-          <input type="text" id="inputPassengerName" name="inputPassengerName" />
-        </div>
-        <div>
-          <label for="inputTicketNumber">票号</label>
-          <input type="text" id="inputTicketNumber" name="inputTicketNumber" />
-        </div>
-        <div>
-          <label for="inputOperatingCarrierPNR">PNR(*)</label>
-          <input type="text" id="inputOperatingCarrierPNR" name="inputOperatingCarrierPNR" />
-        </div>
-        <div>
-          <label for="inputPassengerMemberID">会员ID</label>
-          <input type="text" id="inputPassengerMemberID" name="inputPassengerMemberID" />
-        </div>
-        <div>
-          <label for="inputPassengerMember">会员等级</label>
-          <input type="text" id="inputPassengerMember" name="inputPassengerMember" />
-        </div>
-
-        <div>
-          <label for="inputOperatingCarrierDesignator">承运人代码(*)</label>
-          <input type="text" id="inputOperatingCarrierDesignator" name="inputOperatingCarrierDesignator" />
-        </div>
-        <div>
-          <label for="inputFlightNumber">航班号(数字)(*)</label>
-          <input type="text" id="inputFlightNumber" name="inputFlightNumber" />
-        </div>
-        <div>
-          <label for="inputFlightDate">航班日期(*)</label>
-          <input type="date" id="inputFlightDate" name="inputFlightDate" />
-        </div>
-        <div>
-          <label for="inputDepartureAirport">出发机场代码(*)</label>
-          <input type="text" id="inputDepartureAirport" name="inputDepartureAirport" />
-        </div>
-        <div>
-          <label for="inputDepartureAirportName">出发机场名称</label>
-          <input type="text" id="inputDepartureAirportName" name="inputDepartureAirportName" />
-        </div>
-        <div>
-          <label for="inputDepartureTime">出发时间</label>
-          <input type="time" id="inputDepartureTime" name="inputDepartureTime" />
-        </div>
-        <div>
-          <label for="inputArrivalAirport">到达机场代码(*)</label>
-          <input type="text" id="inputArrivalAirport" name="inputArrivalAirport" />
-        </div>
-        <div>
-          <label for="inputArrivalAirportName">到达机场名称</label>
-          <input type="text" id="inputArrivalAirportName" name="inputArrivalAirportName" />
-        </div>
-        <div>
-          <label for="inputArrivalTime">到达时间</label>
-          <input type="time" id="inputArrivalTime" name="inputArrivalTime" />
-        </div>
-        <div>
-          <label for="inputArrivalDayOffset">到达日期偏移(+1)</label>
-          <input type="text" id="inputArrivalDayOffset" name="inputArrivalDayOffset" />
-        </div>
-
-        <div>
-          <label for="inputBoardingTime">登机时间</label>
-          <input type="time" id="inputBoardingTime" name="inputBoardingTime" />
-        </div><div>
-          <label for="inputCompartmentCode">舱位代码(*)</label>
-          <input type="text" id="inputCompartmentCode" name="inputCompartmentCode" />
-        </div><div>
-          <label for="inputSeatNumber">座位号(*)</label>
-          <input type="text" id="inputSeatNumber" name="inputSeatNumber" />
-        </div>
-        <div>
-          <label for="inputGate">登机口</label>
-          <input type="text" id="inputGate" name="inputGate" />
-        </div>
-        <div>
-          <label for="inputCheckInSequenceNumber">值机序号(*)</label>
-          <input type="text" id="inputCheckInSequenceNumber" name="inputCheckInSequenceNumber" />
-        </div>
-      </form>
-      <button onclick="redirectToNewURL();">生成</button>
-    </div>
-  </div>
 </body>
 <script src="js/bcbp.min.js"></script>
 <script src="js/qrcode.min.js"></script>
@@ -417,83 +455,280 @@
     return null;
   }
 
-  // 获取输入框的值
-  function getInputValues() {
-    const passengerName = document.getElementById('inputPassengerName').value;
-    const passengerMember = document.getElementById('inputPassengerMember').value;
-    const passengerMemberID = document.getElementById('inputPassengerMemberID').value;
-    const ticketNumber = document.getElementById('inputTicketNumber').value;
-    const boardingTime = document.getElementById('inputBoardingTime').value;
-    const gate = document.getElementById('inputGate').value;
-    const operatingCarrierPNR = document.getElementById('inputOperatingCarrierPNR').value;
-    const departureAirport = document.getElementById('inputDepartureAirport').value;
-    const departureTime = document.getElementById('inputDepartureTime').value;
-    const departureAirportName = document.getElementById('inputDepartureAirportName').value;
-    const arrivalAirport = document.getElementById('inputArrivalAirport').value;
-    const arrivalAirportName = document.getElementById('inputArrivalAirportName').value;
-    const arrivalTime = document.getElementById('inputArrivalTime').value;
-    const arrivalDayOffset = document.getElementById('inputArrivalDayOffset').value;
-    const operatingCarrierDesignator = document.getElementById('inputOperatingCarrierDesignator').value;
-    const flightNumber = document.getElementById('inputFlightNumber').value;
-    const flightDate = document.getElementById('inputFlightDate').value;
-    const compartmentCode = document.getElementById('inputCompartmentCode').value;
-    const seatNumber = document.getElementById('inputSeatNumber').value;
-    const checkInSequenceNumber = document.getElementById('inputCheckInSequenceNumber').value;
+  //跳转到新的 URL (保留用于兼容性)
+  function redirectToNewURL() {
+    // 这个函数现在主要通过 SweetAlert2 调用
+    showModal();
+  }
 
+  // 保留用于兼容性的空函数
+  function getInputValues() {
+    return {};
+  }
+
+
+  // 自定义 SweetAlert2 风格的模态框实现
+  const Swal = {
+    fire: function(options) {
+      return new Promise((resolve) => {
+        // 创建模态框 HTML
+        const backdropHtml = `
+          <div class="swal2-backdrop" id="swal2-backdrop">
+            <div class="swal2-popup">
+              <div class="swal2-header">
+                <h2 class="swal2-title">${options.title || ''}</h2>
+              </div>
+              <div class="swal2-content">
+                ${options.html || options.text || ''}
+              </div>
+              <div class="swal2-actions">
+                ${options.showCancelButton ? `<button class="swal2-button swal2-cancel" id="swal2-cancel">${options.cancelButtonText || '取消'}</button>` : ''}
+                ${!options.timer ? `<button class="swal2-button swal2-confirm" id="swal2-confirm">${options.confirmButtonText || '确定'}</button>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+
+        // 添加到页面
+        document.body.insertAdjacentHTML('beforeend', backdropHtml);
+        const backdrop = document.getElementById('swal2-backdrop');
+        const confirmBtn = document.getElementById('swal2-confirm');
+        const cancelBtn = document.getElementById('swal2-cancel');
+
+        // 显示动画
+        setTimeout(() => {
+          backdrop.classList.add('show');
+        }, 10);
+
+        // 关闭模态框函数
+        const closeModal = (isConfirmed = false, result = null) => {
+          backdrop.classList.remove('show');
+          setTimeout(() => {
+            backdrop.remove();
+          }, 300);
+          resolve({
+            isConfirmed: isConfirmed,
+            value: result,
+            dismiss: isConfirmed ? null : 'cancel'
+          });
+        };
+
+        // 绑定事件
+        if (confirmBtn) {
+          confirmBtn.addEventListener('click', () => {
+            if (options.preConfirm) {
+              const result = options.preConfirm();
+              closeModal(true, result);
+            } else {
+              closeModal(true);
+            }
+          });
+        }
+
+        if (cancelBtn) {
+          cancelBtn.addEventListener('click', () => {
+            closeModal(false);
+          });
+        }
+
+        // 注释掉点击背景关闭功能，用户必须通过按钮操作
+        // backdrop.addEventListener('click', (e) => {
+        //   if (e.target === backdrop) {
+        //     closeModal(false);
+        //   }
+        // });
+
+        // ESC 键关闭
+        const handleEsc = (e) => {
+          if (e.key === 'Escape') {
+            closeModal(false);
+            document.removeEventListener('keydown', handleEsc);
+          }
+        };
+        document.addEventListener('keydown', handleEsc);
+
+        // 如果有定时器，自动关闭
+        if (options.timer) {
+          setTimeout(() => {
+            closeModal(false);
+          }, options.timer);
+        }
+      });
+    },
+
+    close: function() {
+      const backdrop = document.getElementById('swal2-backdrop');
+      if (backdrop) {
+        backdrop.classList.remove('show');
+        setTimeout(() => {
+          backdrop.remove();
+        }, 300);
+      }
+    },
+
+    // 添加常用的 dismiss reasons
+    DismissReason: {
+      cancel: 'cancel',
+      backdrop: 'backdrop',
+      esc: 'esc'
+    }
+  };
+
+  // 操作弹窗 - 使用自定义的 SweetAlert2 风格模态框
+  function showModal() {
+    Swal.fire({
+      title: '✈️ 自定义登机牌信息',
+      html: `
+        <div class="boarding-form">
+          <div class="form-group">
+            <label for="swal-inputPassengerName">乘客姓名(*)</label>
+            <input type="text" id="swal-inputPassengerName" placeholder="请输入乘客姓名" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputTicketNumber">票号</label>
+            <input type="text" id="swal-inputTicketNumber" placeholder="请输入票号" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputOperatingCarrierPNR">PNR(*)</label>
+            <input type="text" id="swal-inputOperatingCarrierPNR" placeholder="请输入PNR" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputPassengerMemberID">会员ID</label>
+            <input type="text" id="swal-inputPassengerMemberID" placeholder="请输入会员ID" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputPassengerMember">会员等级</label>
+            <input type="text" id="swal-inputPassengerMember" placeholder="请输入会员等级" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputOperatingCarrierDesignator">承运人代码(*)</label>
+            <input type="text" id="swal-inputOperatingCarrierDesignator" placeholder="如: CZ" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputFlightNumber">航班号(数字)(*)</label>
+            <input type="text" id="swal-inputFlightNumber" placeholder="如: 1234" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputFlightDate">航班日期(*)</label>
+            <input type="date" id="swal-inputFlightDate" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputDepartureAirport">出发机场代码(*)</label>
+            <input type="text" id="swal-inputDepartureAirport" placeholder="如: PKX" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputDepartureAirportName">出发机场名称</label>
+            <input type="text" id="swal-inputDepartureAirportName" placeholder="如: 北京大兴国际机场" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputDepartureTime">出发时间</label>
+            <input type="time" id="swal-inputDepartureTime" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputArrivalAirport">到达机场代码(*)</label>
+            <input type="text" id="swal-inputArrivalAirport" placeholder="如: CAN" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputArrivalAirportName">到达机场名称</label>
+            <input type="text" id="swal-inputArrivalAirportName" placeholder="如: 广州白云国际机场" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputArrivalTime">到达时间</label>
+            <input type="time" id="swal-inputArrivalTime" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputArrivalDayOffset">到达日期偏移</label>
+            <input type="text" id="swal-inputArrivalDayOffset" placeholder="如: +1" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputBoardingTime">登机时间</label>
+            <input type="time" id="swal-inputBoardingTime" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputCompartmentCode">舱位代码(*)</label>
+            <input type="text" id="swal-inputCompartmentCode" placeholder="如: Y" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputSeatNumber">座位号(*)</label>
+            <input type="text" id="swal-inputSeatNumber" placeholder="如: 1A" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputGate">登机口</label>
+            <input type="text" id="swal-inputGate" placeholder="如: A12" />
+          </div>
+          <div class="form-group">
+            <label for="swal-inputCheckInSequenceNumber">值机序号(*)</label>
+            <input type="text" id="swal-inputCheckInSequenceNumber" placeholder="如: 025" />
+          </div>
+        </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: '🎫 生成登机牌',
+      cancelButtonText: '📋 使用演示信息',
+      preConfirm: () => {
+        return getSwalInputValues();
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // 用户点击了生成按钮
+        const inputValues = result.value;
+        const url = buildURLFromValues(inputValues);
+        window.location.href = url;
+      } else if (result.dismiss === 'cancel') {
+        // 用户点击了使用演示信息按钮 - 显示成功消息但不重新加载页面
+        setTimeout(() => {
+          Swal.fire({
+            title: '🎉 使用演示信息',
+            text: '已为您加载演示数据！',
+            timer: 1500
+          });
+        }, 350); // 等待前一个模态框完全关闭
+      }
+    });
+  }
+
+  function hideModal() {
+    Swal.close();
+  }
+
+  // 获取 SweetAlert2 输入框的值
+  function getSwalInputValues() {
     return {
-      passengerName,
-      passengerMember,
-      passengerMemberID,
-      ticketNumber,
-      boardingTime,
-      gate,
-      operatingCarrierPNR,
-      departureAirport,
-      departureTime,
-      departureAirportName,
-      arrivalAirport,
-      arrivalAirportName,
-      arrivalTime,
-      arrivalDayOffset,
-      operatingCarrierDesignator,
-      flightNumber,
-      flightDate,
-      compartmentCode,
-      seatNumber,
-      checkInSequenceNumber
+      passengerName: document.getElementById('swal-inputPassengerName').value,
+      ticketNumber: document.getElementById('swal-inputTicketNumber').value,
+      operatingCarrierPNR: document.getElementById('swal-inputOperatingCarrierPNR').value,
+      passengerMemberID: document.getElementById('swal-inputPassengerMemberID').value,
+      passengerMember: document.getElementById('swal-inputPassengerMember').value,
+      operatingCarrierDesignator: document.getElementById('swal-inputOperatingCarrierDesignator').value,
+      flightNumber: document.getElementById('swal-inputFlightNumber').value,
+      flightDate: document.getElementById('swal-inputFlightDate').value,
+      departureAirport: document.getElementById('swal-inputDepartureAirport').value,
+      departureAirportName: document.getElementById('swal-inputDepartureAirportName').value,
+      departureTime: document.getElementById('swal-inputDepartureTime').value,
+      arrivalAirport: document.getElementById('swal-inputArrivalAirport').value,
+      arrivalAirportName: document.getElementById('swal-inputArrivalAirportName').value,
+      arrivalTime: document.getElementById('swal-inputArrivalTime').value,
+      arrivalDayOffset: document.getElementById('swal-inputArrivalDayOffset').value,
+      boardingTime: document.getElementById('swal-inputBoardingTime').value,
+      compartmentCode: document.getElementById('swal-inputCompartmentCode').value,
+      seatNumber: document.getElementById('swal-inputSeatNumber').value,
+      gate: document.getElementById('swal-inputGate').value,
+      checkInSequenceNumber: document.getElementById('swal-inputCheckInSequenceNumber').value
     };
   }
 
-  // 构建含参数的 URL
-  function buildURL() {
-    let url = window.location.href.split('?')[0]; // 获取当前页面的 URL，并去掉查询字符串
-    inputValues = getInputValues();
+  // 从输入值构建 URL
+  function buildURLFromValues(inputValues) {
+    let url = window.location.href.split('?')[0];
     for (const key in inputValues) {
       if (inputValues.hasOwnProperty(key)) {
         const value = inputValues[key];
-        // 检查属性值是否存在
         if (value !== null && value !== undefined && value !== '') {
-          // 对参数值进行 URI 编码，确保特殊字符能正确处理
           url = url + (url.includes('?') ? '&' : '?') + key + '=' + encodeURIComponent(value);
         }
       }
     }
     return url;
-  }
-
-  //跳转到新的 URL
-  function redirectToNewURL() {
-    window.location.href = buildURL();
-  }
-
-
-  // 操作弹窗
-  var modal = document.getElementById("modal");
-  function showModal() {
-    modal.style.display = "block";
-  }
-  function hideModal() {
-    modal.style.display = "none";
   }
 
   // 如果没有参数，则使用默认值
@@ -503,7 +738,18 @@
     }
     return value;
   }
-  var passengerName = getQueryVariable("passengerName") ? convertToUpperCase(getQueryVariable("passengerName")) : (showModal(), "HELLO/WORLD"); // 乘客姓名
+  // 标记是否已经显示过模态框
+  var hasShownModal = false;
+  
+  function showModalOnce() {
+    if (!hasShownModal) {
+      hasShownModal = true;
+      showModal();
+    }
+    return "HELLO/WORLD";
+  }
+
+  var passengerName = getQueryVariable("passengerName") ? convertToUpperCase(getQueryVariable("passengerName")) : showModalOnce(); // 乘客姓名
   var passengerMember = convertToUpperCase(getQueryVariable("passengerMember")) || "CZ ELITE PLUS"; // 乘客会员
   var passengerMemberID = convertToUpperCase(getQueryVariable("passengerMemberID")) || "CZ 0000000000/G"; // 乘客会员ID
   var ticketNumber = getQueryVariable("ticketNumber") || "7840000000000"; // 机票号
