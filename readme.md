@@ -1,41 +1,76 @@
-# One-boarding
+<div align="center">
+  <img src="readme/main.png" alt="One-boarding" height="200px">
+  <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
+  <em>Beautiful customizable boarding pass generator with real IATA BCBP QR codes</em>
+</div>
 
-<img src="readme/main.png" width = "300" alt="主界面" align=center />
+<p align="center">
+<img src="https://img.shields.io/github/stars/cornjosh/one-boarding?style=flat-square" alt="GitHub Stars"/>
+<img src="https://img.shields.io/github/forks/cornjosh/one-boarding?style=flat-square" alt="GitHub Forks"/>
+<img src="https://img.shields.io/github/issues/cornjosh/one-boarding?style=flat-square" alt="GitHub Issues"/>
+<img src="https://img.shields.io/github/last-commit/cornjosh/one-boarding?style=flat-square" alt="GitHub last commit"/>
+<img src="https://img.shields.io/github/license/cornjosh/one-boarding?style=flat-square" alt="GitHub License"/>
+</p>
 
-## 项目概述
+<h5 align="center">One-boarding 是一个开源的登机牌生成器，可以创建美观、自定义的登机牌界面，包含真实可用的乘机二维码（基于 IATA Bar Coded Boarding Pass 标准）。支持14种语言的国际化界面。</h5>
+
+> 🎯 **快速预览**: [https://one-boarding.linkyou.top/](https://one-boarding.linkyou.top/)
+
+---
+
+[English](/README_EN.md) | [日本語](/README_JA.md) | [한국어](/README_KO.md) | [Français](/README_FR.md) | [Deutsch](/README_DE.md) | [Español](/README_ES.md) | [Русский](/README_RU.md)
+
+---
+
+## 项目概述 ✨
 `one-boarding` 可用于生成一个美观、自定义的登机牌界面，包含真实可用的乘机二维码（根据 IATA Bar Coded Boarding Pass 格式生成）
 
-## 国际化支持 (i18n)
-本项目支持 14 种语言，可在登机牌页面选择不同的显示语言：
+## 功能特性 🎯
 
-### 支持的语言
-- **zh-Hans**: 简体中文
-- **zh-Hant**: 繁體中文  
-- **en-US**: English (United States)
-- **fr-FR**: Français (France)
-- **de-DE**: Deutsch (Deutschland)
-- **es-ES**: Español (España)
-- **pt-PT**: Português (Portugal)
-- **it-IT**: Italiano (Italia)
-- **ru-RU**: Русский (Россия)
-- **ja-JP**: 日本語 (日本)
-- **ko-KR**: 한국어 (대한민국)
-- **tr-TR**: Türkçe (Türkiye)
-- **pl-PL**: Polski (Polska)
-- **hu-HU**: Magyar (Magyarország)
+### ✈️ 登机牌信息展示
+- [x] **航班信息**：显示航班号、航班日期、出发机场和到达机场的信息
+- [x] **乘客信息**：包括乘客姓名、票号、会员ID 和会员等级等信息
+- [x] **登机信息**：显示登机时间、舱位代码、座位号和登机口等信息
+- [x] **二维码**：生成真实可用的乘机二维码（符合 IATA BCBP 标准）
 
-### 语言切换方式
+### 🌍 国际化支持 (i18n)
+本项目支持 **14 种语言**，可在登机牌页面选择不同的显示语言：
+
+#### 支持的语言
+- **zh-Hans**: 简体中文 🇨🇳
+- **zh-Hant**: 繁體中文 🇹🇼 
+- **en-US**: English (United States) 🇺🇸
+- **fr-FR**: Français (France) 🇫🇷
+- **de-DE**: Deutsch (Deutschland) 🇩🇪
+- **es-ES**: Español (España) 🇪🇸
+- **pt-PT**: Português (Portugal) 🇵🇹
+- **it-IT**: Italiano (Italia) 🇮🇹
+- **ru-RU**: Русский (Россия) 🇷🇺
+- **ja-JP**: 日本語 (日本) 🇯🇵
+- **ko-KR**: 한국어 (대한민국) 🇰🇷
+- **tr-TR**: Türkçe (Türkiye) 🇹🇷
+- **pl-PL**: Polski (Polska) 🇵🇱
+- **hu-HU**: Magyar (Magyarország) 🇭🇺
+
+#### 语言切换方式
 1. **自动检测**: 根据浏览器语言自动选择对应语言
 2. **URL参数**: 通过 `?lang=language-code` 指定语言，如 `?lang=en-US`
 3. **页面选择器**: 使用页面右上角的语言选择下拉框
 4. **本地存储**: 选择的语言会保存在浏览器中，下次访问时自动应用
 
-### 翻译内容
+#### 翻译内容
 所有登机牌相关的航空术语都根据各地区的习惯进行了专业翻译，包括：
 - 登机牌标题和字段标签
 - 航空术语（航班号、登机口、座位等）
 - 表单标签和占位符文本
 - 按钮文本和提示信息
+
+### 🏗️ 技术特性
+- [x] **单文件部署**: 主要包含单一 HTML 文件，方便部署
+- [x] **响应式设计**: 适配桌面和移动设备
+- [x] **实时预览**: 即时查看登机牌效果
+- [x] **自定义信息**: 支持自定义所有登机牌字段
+- [x] **航司支持**: 支持多家航空公司logo显示
 
 ## 项目结构
 项目主要包含单一 `html` 文件，方便部署
