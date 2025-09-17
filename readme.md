@@ -1,6 +1,6 @@
 <div align="center">
   <img src="readme/main.png" alt="One-boarding" height="200px">
-  <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
+  <h1><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h1>
   <em>Beautiful customizable boarding pass generator with real IATA BCBP QR codes</em>
 </div>
 

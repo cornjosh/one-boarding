@@ -1,5 +1,5 @@
 <div align="center">
-  <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
+  <h1><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h1>
   <em>Schöner anpassbarer Bordkarten-Generator mit echten IATA BCBP QR-Codes</em>
 </div>
 

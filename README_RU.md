@@ -1,5 +1,5 @@
 <div align="center">
-  <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
+  <h1><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h1>
   <em>Красивый настраиваемый генератор посадочных талонов с настоящими QR-кодами IATA BCBP</em>
 </div>
 
