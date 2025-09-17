@@ -1,5 +1,5 @@
 <div align="center">
-  <h3><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h3>
+  <h1><a href="https://github.com/cornjosh/one-boarding">One-boarding</a></h1>
   <em>基于真实 IATA BCBP QR 码的美观可定制登机牌生成器</em>
 </div>
 
